@@ -1,12 +1,16 @@
 @use 'colors' as *;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;500;600;700&family=Montserrat:wght@300;500;700&display=swap');
 
-$base-font: 'Poppins', sans-serif;
-$heading-font: 'Poppins', sans-serif;
+$base-font: 'Montserrat', sans-serif;
+$heading-font: 'Fraunces', serif;
 
-$weight-light: 300;
-$weight-medium: 500;
-$weight-semibold: 700;
+$weight-light: 500;
+$weight-bold: 700;
+
+$font-size-h1: 32px;
+$font-size-h2: 20px;
+$font-size-quote: 20px;
+$font-size-body: 16px;
 
 $navigation-breakpoint-mobile: 489px;
 $mobile: 550px;
