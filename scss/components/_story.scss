@@ -1,96 +1,52 @@
-@use '../abstracts/index' as *;
+@use '../abstracts' as *;
 
-.goals {
-  padding-block: 60px;
+.team-story {
+  background-color: $background;
+  padding: 80px 20px;
+  width: 100%;
 
-  &__story {
-    margin: 40px 20px;
+  &__container {
+    max-width: $content-width-small;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
 
-    @include respond-min($desktop) {
-      margin: 60px auto;
-      max-width: 1240px;
-    }
-
-    &__container {
-      background: linear-gradient(180deg, #f88544 0%, #ffad7f 100%);
-      padding: 40px 20px;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      @include respond-min($tablet) {
-        padding: 60px;
-      }
-
-      @include respond-min($desktop) {
-        padding: 100px;
-      }
-    }
-
-    &__title {
-      font-size: 28px;
-      letter-spacing: 0.04em;
-      margin: 0;
-
-      @include respond-min($tablet) {
-        font-size: 40px;
-      }
-    }
-
-    &__text {
-      font-size: 16px;
-      line-height: 1.6;
-      letter-spacing: 0.04em;
-      margin: 0;
+    @include respond-min($tablet) {
+      grid-template-columns: 1.8fr 1fr;
+      gap: 60px;
     }
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding-inline: 20px;
-    max-width: $content-width;
-    margin: 0 auto;
+  &__title {
+    font-family: $heading-font;
+    color: $primary;
+    font-size: 32px;
+    font-weight: $weight-bold;
+    margin-bottom: 24px;
+  }
 
-    @include respond-min($tablet) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-    }
-
-    @include respond-min($desktop) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 80px 60px;
-    }
-
-    &__card {
-      padding: 20px 0;
-
-      @include respond-min($desktop) {
-        padding: 40px 0;
-      }
-    }
-
-    &__title {
-      font-size: 24px;
-      font-weight: $weight-bold;
+  &__text {
+    p {
+      font-family: $base-font;
+      color: $text-color;
+      font-size: 16px;
+      line-height: 1.6;
       margin-bottom: 16px;
 
-      @include respond-min($tablet) {
-        font-size: 32px;
-      }
-
-      @include respond-min($desktop) {
-        font-size: 40px;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
+  }
 
-    &__text {
-      font-size: 16px;
-      line-height: 1.5;
-      font-style: italic;
-      letter-spacing: 0.04em;
+  &__animation {
+    display: flex;
+    justify-content: center;
+
+    @include respond-min($tablet) {
+      justify-content: flex-end;
     }
   }
 }
