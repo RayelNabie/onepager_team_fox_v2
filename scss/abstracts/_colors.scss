@@ -1,9 +1,19 @@
-$primary: #f88544;
-$secondary: #d54310;
-$white: #ffffff;
-$background: #fff7e8;
-$accent: #acbf60;
-$text-color: #39393f;
+$primary: #52714A;
+$primary-dark:#3A5832;
+$primary-light:#92BB87;
 
-$accent-gradient: linear-gradient(180deg, #acbf60 0%, #c0cb90 100%);
-$secondary-gradient: linear-gradient(180deg, #d54310 0%, #d27b5d 100%);
+$secondary: #FFAFC0;
+$secondary-light: #FFCAD5;
+
+$secondary-gradient: linear-gradient(180deg, $secondary-light 0%, $secondary 100%);
+
+$accent: #FFCE88;
+$accent-dark: #FFA21C;
+$accent-light: #FAE0BE;
+
+$white: #ffffff;
+$background: #FFF8F0;
+
+$accent-gradient: linear-gradient(180deg, $accent-light 0%, $accent 100%);
+
+$text-color: #3A5832;
