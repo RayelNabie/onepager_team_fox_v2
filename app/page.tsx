@@ -1,18 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
+import TeamSection from "@/components/TeamSection";
 
 export default function Home() {
     return (
         <main>
             <Navbar/>
             <Header/>
-            
-            <section id="team" className="team section">
-                <div className="container">
-                    <h2>Het Team</h2>
-                    <p>Team content placeholder...</p>
-                </div>
-            </section>
+            <TeamSection/>
 
             <section id="situatie" className="situation section">
                 <div className="container">
