@@ -1,0 +1,114 @@
+@use '../abstracts/index' as *;
+
+.scope {
+  padding: 60px 20px;
+
+  @include respond-min($desktop) {
+    padding: 100px 0;
+  }
+
+  &__container {
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+
+  &__main-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: $text-color;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+
+    @include respond-min($tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__card {
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    &--in {
+      background: $accent-gradient;
+    }
+
+    &--out {
+      background: $secondary-gradient;
+      color: $white;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: $weight-semibold;
+
+    &--out {
+      color: $white;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    &--in {
+      color: $text-color;
+    }
+
+    &--out {
+      color: $white;
+    }
+
+    li {
+      margin-bottom: 15px;
+      padding-left: 25px;
+      position: relative;
+      font-size: 16px;
+      line-height: 1.5;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: $text-color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__constraints {
+    background: $white;
+    padding: 40px;
+    border-radius: 30px;
+
+    &-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      @include respond-min($tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond-min($desktop) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
+
+.constraint-item {
+  background: $secondary-gradient;
+  color: $white;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 14px;
+}

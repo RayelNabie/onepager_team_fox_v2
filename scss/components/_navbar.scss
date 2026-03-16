@@ -1,0 +1,62 @@
+@use '../abstracts/index' as *;
+
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $background;
+  height: 40px;
+  z-index: map-get($z-index, header);
+
+  @include respond-min($tablet) {
+    height: 60px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    max-width: $content-width;
+    position: relative;
+  }
+
+  &__logo {
+    background-color: $background;
+    display: flex;
+    align-items: flex-end;
+    height: $header-height-mobile;
+    padding: 0 15px;
+    border-bottom-right-radius: 5px;
+
+    @include respond-min($tablet) {
+      height: 120px;
+      padding: 0 40px;
+      border-bottom-right-radius: 20px;
+    }
+    a {
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    img {
+      height: 25px;
+      width: auto;
+      padding-bottom: 15px;
+
+      @include respond-min($tablet) {
+        height: 45px;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 100px;
+
+    @include respond-min($tablet) {
+      margin-left: 220px;
+    }
+  }
+}

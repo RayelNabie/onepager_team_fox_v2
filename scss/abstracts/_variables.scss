@@ -1,0 +1,35 @@
+@use 'colors' as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+$base-font: 'Poppins', sans-serif;
+$heading-font: 'Poppins', sans-serif;
+
+$weight-light: 300;
+$weight-medium: 500;
+$weight-semibold: 700;
+
+$navigation-breakpoint-mobile: 489px;
+$mobile: 550px;
+$tablet: 768px;
+$desktop: 1024px;
+$navigation-breakpoint-desktop: 1125px;
+$desktop-xl: 1400px;
+$desktop-xxl: 1800px;
+
+$negative-packaging-margin: 100px;
+$base-background-padding: 90px;
+
+$content-width-small: 1120px;
+$content-width: 1440px;
+
+$z-index: (
+  negative: -1,
+  zero: 0,
+  positive: 1,
+  header: 10,
+  header-item: 15,
+  dropdown-list: 20,
+);
+
+$header-height-mobile: 82px;
+$header-height-desktop: 126xpx;
