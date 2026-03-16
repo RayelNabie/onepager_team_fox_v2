@@ -6,7 +6,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
-// Vertel GSAP dat we de ScrollTrigger plugin willen gebruiken
 gsap.registerPlugin(ScrollTrigger);
 
 const TeamStory = () => {
@@ -14,19 +13,18 @@ const TeamStory = () => {
     const flowerRef = useRef<HTMLImageElement>(null);
 
     useGSAP(() => {
-        // GSAP animatie: we animeren VANAF (from) schaal 0 naar de normale status
         gsap.from(flowerRef.current, {
             scale: 0,
             opacity: 0,
             duration: 1,
-            ease: "back.out(1.7)", // Geeft die lekkere organische "pop" (overshoot)
+            ease: "back.out(1.7)",
             scrollTrigger: {
                 trigger: flowerRef.current,
-                start: "top 80%", // Start de animatie als de bovenkant van de bloem op 80% van je schermhoogte is
-                once: true, // Zorgt dat hij maar 1x afspeelt, net als daarnet!
+                start: "top 80%",
+                once: true,
             }
         });
-    }, { scope: containerRef }); // Scope zorgt dat GSAP netjes opruimt als de component verdwijnt
+    }, { scope: containerRef });
 
     return (
         <section className="team-story" id="team-story" ref={containerRef}>
@@ -53,12 +51,11 @@ const TeamStory = () => {
 
                 <div className="team-story__animation">
                     <Image
-                        ref={flowerRef} // GSAP kijkt nu direct naar de Image tag
+                        ref={flowerRef}
                         src="/flower.svg"
                         alt="Decoratieve bloem"
                         width={250}
                         height={250}
-                        // Geen extra classes meer nodig!
                     />
                 </div>
 
