@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import TeamSection from "@/components/TeamSection";
 import TeamStory from "@/components/TeamStory";
 import TeamValues from "@/components/TeamValues";
+import Situations from "@/components/Situations";
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
             <TeamSection/>
             <TeamStory/>
             <TeamValues/>
+            <Situations/>
 
             <section id="situatie" className="situation section">
                 <div className="container">

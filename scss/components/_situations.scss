@@ -1,0 +1,138 @@
+@use '../abstracts' as *;
+
+.situations {
+  background-color: $background;
+  padding-block: clamp(5rem, 8vw, 6rem);
+  width: 100%;
+  overflow: hidden;
+
+  &__container {
+    max-width: $content-width-small;
+    margin-inline: auto;
+
+    // Mobiel: Gewoon alles onder elkaar (Flexbox is hier handiger dan grid)
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 3.75rem);
+
+    @include respond-min($tablet) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto auto;
+      row-gap: 2rem;
+      column-gap: 1rem;
+    }
+  }
+
+  &__card {
+    border-radius: 1.25rem;
+    padding: clamp(2rem, 5vw, 2.5rem) clamp(1.5rem, 4vw, 1.875rem);
+    z-index: 2; // Blijft boven de decoraties
+
+    &--current {
+      background-color: #FFAEBE; // Het roze van Figma
+
+      @include respond-min($tablet) {
+        // Maak het expliciet voor de browser:
+        grid-row-start: 1;
+        grid-row-end: 2; // Dus: hij vult exact rij 1
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--desired {
+      background-color: $primary; // Het groen
+
+      @include respond-min($tablet) {
+        // Maak het expliciet:
+        grid-row-start: 2;
+        grid-row-end: 3; // Dus: hij vult exact rij 2
+        grid-column: 6 / 13;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $heading-font;
+    font-size: clamp(1.75rem, 3vw + 1rem, 2rem);
+    font-weight: $weight-bold;
+    margin-block-end: 1.25rem;
+    color: $primary; // Donkergroen voor de roze kaart
+
+    &--light {
+      color: $white; // Wit voor de groene kaart
+    }
+  }
+
+  &__text {
+    font-family: $base-font;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: $text-color;
+
+    &--light {
+      color: rgba($white, 0.9);
+    }
+  }
+
+  // 1. De pijl is weer terug!
+  &__arrow {
+    display: none;
+
+    @include respond-min($tablet) {
+      display: block;
+
+      // Overlapt beide rijen
+      grid-row-start: 1;
+      grid-row-end: 2;
+
+      grid-column: 7 / 8; // Kolom 7
+
+      align-self: center; // Verticaal centreren binnen zijn cellen
+      justify-self: center; // Horizontaal centreren
+      z-index: 3; // Zorg dat hij bovenop ligt!
+      width: 5rem;
+
+      // DE MAGISCHE KNOP:
+      // Omdat we 'align-self: center' hebben gebruikt, kun je hem met translateY perfect positioneren.
+      // 0 = op de rand. 1rem = iets eronder. -1rem = iets erin.
+      // Ik heb de transformaties gefinetuned om ze pixel-perfect te positioneren.
+      transform: translateY(-1.5rem) translateX(0.5rem); // Iets omhooggetrokken en iets naar rechts
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  // 2. Het vosje (maar 1 keer dit keer 😉)
+  &__fox {
+    display: none;
+
+    @include respond-min($tablet) {
+      display: block;
+
+      grid-row-start: 2;
+      grid-row-end: 3;
+
+      // FIX: Het vosje naar rechts verplaatsen, in de lege ruimte
+      grid-column: 4 / 6; // Kolom 7
+
+      align-self: end; // Duwt hem strak naar de bodem van zijn cel!
+      justify-self: start; // Duwt hem strak tegen het groene blok aan!
+      z-index: 3;
+      width: 8rem;
+
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+// Einde van .situations
