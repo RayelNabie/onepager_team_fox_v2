@@ -33,9 +33,9 @@ const TeamStory = () => {
                 <div className="team-story__content">
                     <h2 className="team-story__title">Team story</h2>
                     <div className="team-story__text">
-                        <p>
-                            Wij zijn Team Fox, een interdisciplinaire groep studenten die met een
-                            gezamenlijke missie voor de stad werkt.
+                        <p><b>Wij zijn Team Fox, een interdisciplinaire groep studenten die met een
+                            gezamenlijke missie voor de stad werkt.</b>
+
                         </p>
                         <p>
                             Onze kracht zit in het combineren van inzichten vanuit vijf verschillende

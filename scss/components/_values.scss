@@ -1,0 +1,129 @@
+@use '../abstracts' as *;
+
+.team-values {
+  background-color: $background;
+  width: 100%;
+  overflow: hidden;
+  padding: 60px 20px;
+
+  @include respond-min($tablet) {
+    padding: 80px 20px;
+  }
+
+  &__container {
+    max-width: $content-width-small;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $heading-font;
+    color: $primary;
+    font-size: 28px;
+    font-weight: $weight-bold;
+    margin-bottom: 32px;
+
+    @include respond-min($tablet) {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include respond-min($tablet) {
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    flex: 0 0 85vw;
+    background-color: $primary;
+    border-radius: 20px;
+    padding: 30px 20px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center;
+
+    @include respond-min($tablet) {
+      flex: 0 0 350px;
+      scroll-snap-align: start;
+    }
+  }
+
+  &__card-title {
+    font-family: $heading-font;
+    color: $white;
+    font-size: 20px;
+    font-weight: $weight-bold;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    font-family: $base-font;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+    color: $white;
+  }
+
+  &__scroll {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: $text-color;
+    font-family: $base-font;
+    font-size: 14px;
+
+    @include respond-min($tablet) {
+      margin-top: 30px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      font-size: 18px;
+      animation: bounceHorizontal 2s infinite;
+    }
+  }
+}
+
+@keyframes bounceHorizontal {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}

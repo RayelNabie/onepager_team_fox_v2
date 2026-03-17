@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import TeamSection from "@/components/TeamSection";
 import TeamStory from "@/components/TeamStory";
+import TeamValues from "@/components/TeamValues";
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
             <Header/>
             <TeamSection/>
             <TeamStory/>
+            <TeamValues/>
 
             <section id="situatie" className="situation section">
                 <div className="container">
