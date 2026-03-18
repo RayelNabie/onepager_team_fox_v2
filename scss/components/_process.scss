@@ -1,0 +1,153 @@
+@use '../abstracts' as *;
+
+.process {
+  background-color: #FFAEBE; // De roze achtergrond van deze sectie
+  padding-block: clamp(4rem, 8vw, 6rem);
+  width: 100%;
+
+  &__container {
+    max-width: $content-width; // Iets breder maken als de tijdlijn ruimte nodig heeft
+    margin-inline: auto;
+  }
+
+  &__title {
+    font-family: $heading-font;
+    font-size: $font-size-h1;
+    font-weight: $weight-bold;
+    color: $primary;
+    margin-block-end: 2rem;
+  }
+
+  // Tabbladen Styling
+  &__tabs {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto; // Zorgt dat je op mobiel kunt swipen door de tabs!
+    scrollbar-width: none; // Verbergt scrollbar in Firefox
+    &::-webkit-scrollbar { display: none; } // Verbergt scrollbar in Chrome/Safari
+
+    // Voorkomt dat tabs inkrimpen op kleine schermen
+    padding-inline-end: 2rem;
+  }
+
+  &__tab {
+    background-color: rgba($primary, 0.1); // Tijdelijke kleur voor inactieve tabs, pas aan naar Figma
+    border: none;
+    border-radius: 0.75rem 0.75rem 0 0; // Alleen de bovenkant rond
+    padding: 1rem 1.5rem;
+    font-family: $base-font;
+    font-weight: $weight-bold;
+    color: $primary;
+    cursor: pointer;
+    white-space: nowrap; // Zorgt dat de tekst ("Sprint 1") niet afbreekt
+    transition: background-color 0.3s ease;
+
+    &--active {
+      background-color: $background; // Zelfde beige kleur als de kaart eronder!
+      color: $primary;
+      // Trucje om hem naadloos te laten overgaan in de kaart
+      position: relative;
+      z-index: 2;
+      transform: translateY(1px);
+    }
+  }
+
+  // De Content Kaart
+  &__card {
+    background-color: $background; // Beige
+    border-radius: 0 1.25rem 1.25rem 1.25rem; // Linksboven niet rond vanwege de eerste tab
+    padding: clamp(2rem, 5vw, 4rem);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__timeline {
+    width: 100%;
+    margin-block-end: clamp(3rem, 5vw, 4rem);
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // Grid Layout voor de tekst en foto
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include respond-min($tablet) {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr; // Tekst krijgt iets meer ruimte dan beeld
+      gap: 4rem;
+      align-items: start;
+    }
+  }
+
+  &__sprint-title {
+    font-family: $heading-font;
+    font-size: $font-size-h1;
+    color: $primary;
+    margin-block-end: 0.25rem;
+  }
+
+  &__sprint-subtitle {
+    font-family: $base-font;
+    font-weight: $weight-bold;
+    color: $text-color;
+    font-style: italic;
+
+    margin-block-end: 1rem;
+  }
+
+  &__sprint-intro {
+    font-family: $base-font;
+    margin-block-end: 1.5rem;
+    color: $text-color;
+  }
+
+  &__themes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__theme {
+    h4 {
+      font-family: $base-font;
+      font-weight: $weight-bold;
+      color: $primary;
+      margin-block-end: 0.25rem;
+    }
+    p {
+      font-family: $base-font;
+      font-size: 0.9rem;
+      color: $text-color;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+
+  // Afbeelding en Decoratie
+  &__image-wrapper {
+    position: relative;
+    border-radius: 1.25rem;
+    overflow: visible; // Laat het bloemetje eruit steken
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 1.25rem;
+    display: block;
+  }
+
+  &__flower-decoration {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    z-index: 2;
+  }
+}
