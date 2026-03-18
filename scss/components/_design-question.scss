@@ -1,0 +1,127 @@
+@use '../abstracts' as *;
+
+@use '../abstracts' as *;
+
+.design-question {
+  background-color: transparent; // Laat de beige body-kleur door!
+  padding-block: clamp(4rem, 8vw, 6rem);
+  width: 100%;
+  position: relative;
+
+  // Horizontaal knippen we af, verticaal mag de roze lijn oneindig doorlopen!
+  overflow-x: clip;
+  overflow-y: visible;
+
+  &__container {
+    max-width: $content-width-small;
+    margin-inline: auto;
+    position: relative;
+    z-index: 2; // Tekst ALTIJD boven de wiggles
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 5vw, 4rem);
+
+  }
+
+  // Tekst Styling
+  &__title {
+    font-family: $heading-font;
+    font-size: clamp(1.75rem, 3vw + 1rem, 2rem);
+    font-weight: $weight-bold;
+    color: $primary;
+    margin-block-end: 1rem;
+  }
+
+  &__quote-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-inline-end: 3rem; // Ruimte voor het aanhalingsteken
+  }
+
+  &__quote {
+    font-family: $heading-font;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-style: italic;
+    font-weight: $weight-bold;
+    line-height: 1.4;
+    color: $primary;
+    margin: 0;
+  }
+
+  &__quote-icon {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+  }
+
+  // Scope Grid
+  &__scopes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include respond-min($tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr; // 2 gelijke kolommen
+      gap: 2rem;
+    }
+  }
+
+  &__card {
+    background-color: $primary;
+    border-radius: 1.25rem;
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    color: $white;
+    height: 100%;
+  }
+
+  &__card-title {
+    font-family: $heading-font;
+    font-size: $font-size-h1;
+    font-weight: $weight-bold;
+    color: $white;
+    margin-block-end: 1rem;
+  }
+
+  &__card-text {
+    font-family: $base-font;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba($white, 0.9);
+  }
+
+  // Randvoorwaarden Styling
+  &__conditions {
+    // Extra ruimte tussen de scope-blokken en de randvoorwaarden
+    margin-block-start: clamp(2rem, 5vw, 4rem);
+  }
+
+  &__conditions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; // Ruimte tussen de voorwaarden
+  }
+
+  &__condition {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; // Ruimte tussen het dikgedrukte woord en de tekst
+  }
+
+  &__condition-title {
+    font-family: $base-font;
+    font-size: 1rem;
+    font-weight: $weight-bold;
+    color: $primary; // Donkergroen (check je Figma, anders zwart/text-color maken)
+    margin: 0;
+  }
+
+  &__condition-text {
+    font-family: $base-font;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: $text-color;
+    margin: 0;
+  }
+}
