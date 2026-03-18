@@ -13,9 +13,9 @@ const Navbar = () => {
 
                 <ul className="navbar__menu" data-testid="navbar-menu">
                     <li><Link href="#team" className="navbar__link">Het Team</Link></li>
-                    <li><Link href="#situatie" className="navbar__link">Huidige & Gewenste situatie</Link></li>
+                    <li><Link href="#situaties" className="navbar__link">Huidige & Gewenste situatie</Link></li>
                     <li><Link href="#ontwerpvraag" className="navbar__link">Ontwerpvraag</Link></li>
-                    <li><Link href="#sprintplanning" className="navbar__link">Sprintplanning</Link></li>
+                    <li><Link href="#proces" className="navbar__link">Sprintplanning</Link></li>
                 </ul>
             </div>
         </nav>
