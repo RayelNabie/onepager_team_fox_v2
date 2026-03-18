@@ -4,13 +4,16 @@
   background-color: $background;
   padding-block: clamp(5rem, 8vw, 6rem);
   width: 100%;
-  overflow: hidden;
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
 
   &__container {
     max-width: $content-width-small;
     margin-inline: auto;
 
     // Mobiel: Gewoon alles onder elkaar (Flexbox is hier handiger dan grid)
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: clamp(2.5rem, 5vw, 3.75rem);
@@ -21,6 +24,49 @@
       grid-template-rows: auto auto;
       row-gap: 2rem;
       column-gap: 1rem;
+    }
+  }
+
+  &__wiggles {
+    position: absolute;
+    inset: 0; // Vult de hele sectie
+    z-index: 0; // Áchter de content
+    pointer-events: none;
+    overflow: hidden; // Belangrijk: voorkomt dat de gedraaide wiggle buiten de sectie steekt
+  }
+
+  &__wiggle {
+    position: absolute;
+
+    img {
+      display: block;
+      width: 100%;
+      // DE FIX: height: auto zorgt ervoor dat je SVG zijn natuurlijke,
+      // golvende Figma-verhouding weer terugkrijgt!
+      height: auto;
+    }
+
+    &--orange {
+      // 1. Zet het exacte midden van de lijn in het exacte midden van de sectie
+      top: 60%;
+      left: 50%;
+
+      // 2. Maak hem gigantisch lang, zodat de uiteinden niet in beeld komen als we draaien
+      width: 100vw;
+
+      // DE MAGIC KNOPPEN:
+      // translate(-50%, -50%) zorgt dat hij écht perfect in het midden ankert.
+      // Daarna roteren we hem (-34deg was jouw Figma instelling!)
+      transform: translate(-50%, -50%) rotate(-34deg);
+
+      @include respond-min($tablet) {
+        width: 100vw;
+
+        // FINETUNING VOOR DESKTOP:
+        // Draai met 'rotate' om de hoek te bepalen (bijv -25deg tot -45deg)
+        // Verander de Y-waarde (-50%) naar bijv -40% (omlaag) of -60% (omhoog) om hem te verschuiven
+        transform: translate(-50%, -60%) rotate(-18deg);
+      }
     }
   }
 

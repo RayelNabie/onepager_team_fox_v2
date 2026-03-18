@@ -43,6 +43,13 @@ const Situations = () => {
 
     return (
         <section className="situations" id="situaties" ref={containerRef}>
+            <div className="situations__wiggles" aria-hidden="true">
+                <div className="situations__wiggle situations__wiggle--orange">
+                    {/* We gebruiken een gewone img tag voor achtergrond-SVGs, dat schaalt makkelijker mee */}
+                    <img src="/orange_line.svg" alt="" />
+                </div>
+            </div>
+
             <div className="situations__container container">
 
                 {/* ELEMENT 1: Roze blok (Rij 1, Links) */}
