@@ -1,10 +1,10 @@
 @use '../abstracts/index' as *;
 
 .scope {
-  padding: 60px 20px;
+  padding: 3.75rem 1.25rem;
 
   @include respond-min($desktop) {
-    padding: 100px 0;
+    padding: 6.25rem 0;
   }
 
   &__container {
@@ -13,8 +13,8 @@
   }
 
   &__main-title {
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
     text-align: center;
     color: $text-color;
   }
@@ -22,8 +22,8 @@
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 60px;
+    gap: 1.875rem;
+    margin-bottom: 3.75rem;
 
     @include respond-min($tablet) {
       grid-template-columns: 1fr 1fr;
@@ -31,8 +31,8 @@
   }
 
   &__card {
-    padding: 40px;
-    border-radius: 30px;
+    padding: 2.5rem;
+    border-radius: 1.875rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
     &--in {
@@ -46,8 +46,8 @@
   }
 
   &__title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
     font-weight: $weight-bold;
 
     &--out {
@@ -68,10 +68,10 @@
     }
 
     li {
-      margin-bottom: 15px;
-      padding-left: 25px;
+      margin-bottom: 0.9375rem;
+      padding-left: 1.5625rem;
       position: relative;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 1.5;
 
       &::before {
@@ -86,13 +86,13 @@
 
   &__constraints {
     background: $white;
-    padding: 40px;
-    border-radius: 30px;
+    padding: 2.5rem;
+    border-radius: 1.875rem;
 
     &-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 1.25rem;
 
       @include respond-min($tablet) {
         grid-template-columns: repeat(2, 1fr);
@@ -108,7 +108,7 @@
 .constraint-item {
   background: $secondary-gradient;
   color: $white;
-  padding: 15px;
-  border-radius: 15px;
-  font-size: 14px;
+  padding: 0.9375rem;
+  border-radius: 0.9375rem;
+  font-size: 0.875rem;
 }

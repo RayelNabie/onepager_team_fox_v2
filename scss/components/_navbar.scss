@@ -2,60 +2,70 @@
 
 .navbar {
   position: fixed;
-  top: 50px;
+  top: 1rem;
   left: 0;
   right: 0;
   z-index: map-get($z-index, header);
 
   display: flex;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 1.25rem;
+
+  @include respond-min($tablet) {
+    top: 3.125rem;
+  }
 
   &__container {
     display: inline-flex;
     align-items: center;
-
-    gap: 60px;
-    padding: 10px 100px;
+    gap: 1.5rem;
+    padding: 0.625rem 1.5rem;
 
     background-color: $background;
-    border-radius: 20px;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+    @include respond-min($tablet) {
+      gap: 3.75rem;
+      padding: 0.625rem 6.25rem;
+    }
   }
 
   &__logo {
     a {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 0.75rem;
 
       color: $text-color;
       font-family: $heading-font;
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: $weight-bold;
       text-decoration: none;
     }
   }
 
   &__menu {
-    display: flex;
+    display: none;
     align-items: center;
-    gap: 40px;
+    gap: 2.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    @include respond-max($navigation-breakpoint-mobile) {
-      display: none;
+    @include respond-min($desktop) {
+      display: flex;
     }
   }
 
   &__link {
     color: $primary;
     font-family: $base-font;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: $weight-light;
     text-decoration: none;
     transition: color 0.3s ease;
+    white-space: nowrap;
 
     &:hover {
       color: $accent-dark;

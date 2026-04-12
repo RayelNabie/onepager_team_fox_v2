@@ -1,61 +1,96 @@
 @use '../abstracts' as *;
 
 .process {
-  background-color: #FFAEBE; // De roze achtergrond van deze sectie
+  background-color: #FFAEBE;
   padding-block: clamp(4rem, 8vw, 6rem);
   width: 100%;
 
   &__container {
-    max-width: $content-width; // Iets breder maken als de tijdlijn ruimte nodig heeft
+    max-width: $content-width;
     margin-inline: auto;
+    padding: 0 1.5rem;
   }
 
   &__title {
     font-family: $heading-font;
-    font-size: $font-size-h1;
+    font-size: clamp(1.75rem, 3vw + 1rem, 2rem);
     font-weight: $weight-bold;
     color: $primary;
     margin-block-end: 2rem;
   }
 
-  // Tabbladen Styling
-  &__tabs {
-    display: flex;
-    gap: 0.5rem;
-    overflow-x: auto; // Zorgt dat je op mobiel kunt swipen door de tabs!
-    scrollbar-width: none; // Verbergt scrollbar in Firefox
-    &::-webkit-scrollbar { display: none; } // Verbergt scrollbar in Chrome/Safari
-
-    // Voorkomt dat tabs inkrimpen op kleine schermen
-    padding-inline-end: 2rem;
+  &__controls {
+    width: 100%;
   }
 
-  &__tab {
-    background-color: rgba($primary, 0.1); // Tijdelijke kleur voor inactieve tabs, pas aan naar Figma
+  &__dropdown-wrapper {
+    display: block;
+    position: relative;
+    z-index: 2;
+    transform: translateY(1px); // Connect visually with the card
+    width: fit-content;
+
+    @include respond-min($tablet) {
+      display: none;
+    }
+  }
+
+  &__dropdown {
+    width: 100%;
+    min-width: 150px;
+    appearance: none;
+    background-color: $background;
     border: none;
-    border-radius: 0.75rem 0.75rem 0 0; // Alleen de bovenkant rond
-    padding: 1rem 1.5rem;
+    border-radius: 0.75rem 0.75rem 0 0;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
     font-family: $base-font;
+    font-size: 0.9375rem;
     font-weight: $weight-bold;
     color: $primary;
     cursor: pointer;
-    white-space: nowrap; // Zorgt dat de tekst ("Sprint 1") niet afbreekt
-    transition: background-color 0.3s ease;
+    outline: none;
+
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23385741' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+  }
+
+  &__tabs {
+    display: none;
+
+    @include respond-min($tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  }
+
+  &__tab {
+    background-color: rgba(#A78E6E, 0.4);
+    border: none;
+    border-radius: 0.75rem 0.75rem 0 0;
+    padding: 1rem 1.5rem;
+    font-family: $base-font;
+    font-size: 0.9375rem;
+    font-weight: $weight-bold;
+    color: $primary;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 
     &--active {
-      background-color: $background; // Zelfde beige kleur als de kaart eronder!
+      background-color: $background;
       color: $primary;
-      // Trucje om hem naadloos te laten overgaan in de kaart
       position: relative;
       z-index: 2;
       transform: translateY(1px);
     }
   }
 
-  // De Content Kaart
   &__card {
-    background-color: $background; // Beige
-    border-radius: 0 1.25rem 1.25rem 1.25rem; // Linksboven niet rond vanwege de eerste tab
+    background-color: $background;
+    border-radius: 0 1.25rem 1.25rem 1.25rem;
     padding: clamp(2rem, 5vw, 4rem);
     position: relative;
     z-index: 1;
@@ -72,7 +107,6 @@
     }
   }
 
-  // Grid Layout voor de tekst en foto
   &__content {
     display: flex;
     flex-direction: column;
@@ -80,25 +114,31 @@
 
     @include respond-min($tablet) {
       display: grid;
-      grid-template-columns: 1.2fr 1fr; // Tekst krijgt iets meer ruimte dan beeld
+      grid-template-columns: 1.2fr 1fr;
       gap: 4rem;
       align-items: start;
+    }
+
+    &--sprint2 {
+      @include respond-min($tablet) {
+        display: flex;
+        gap: 0.625rem;
+      }
     }
   }
 
   &__sprint-title {
     font-family: $heading-font;
-    font-size: $font-size-h1;
+    font-size: 2rem;
     color: $primary;
     margin-block-end: 0.25rem;
   }
 
   &__sprint-subtitle {
     font-family: $base-font;
+    font-size: 1rem;
     font-weight: $weight-bold;
     color: $text-color;
-    font-style: italic;
-
     margin-block-end: 1rem;
   }
 
@@ -106,6 +146,7 @@
     font-family: $base-font;
     margin-block-end: 1.5rem;
     color: $text-color;
+    font-style: italic;
   }
 
   &__themes {
@@ -121,33 +162,202 @@
       color: $primary;
       margin-block-end: 0.25rem;
     }
+
     p {
       font-family: $base-font;
-      font-size: 0.9rem;
+      font-size: 0.9375rem;
       color: $text-color;
-      line-height: 1.5;
+      line-height: 1.6;
       margin: 0;
     }
   }
 
-  // Afbeelding en Decoratie
   &__image-wrapper {
     position: relative;
     border-radius: 1.25rem;
-    overflow: visible; // Laat het bloemetje eruit steken
+    background-color: $primary;
+    padding: 0.5rem;
   }
 
   &__image {
     width: 100%;
     height: auto;
-    border-radius: 1.25rem;
+    border-radius: 0.75rem;
     display: block;
   }
 
   &__flower-decoration {
     position: absolute;
-    bottom: -1.5rem;
-    right: -1.5rem;
+    bottom: -1rem;
+    right: -1rem;
     z-index: 2;
+  }
+
+  .sprint2-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px dashed rgba($primary, 0.3);
+    padding-bottom: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .sprint2-grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include respond-min($tablet) {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 3rem 2rem;
+      align-items: stretch;
+    }
+  }
+
+  .sprint2-timeline-label {
+    display: none;
+
+    @include respond-min($tablet) {
+      display: block;
+      position: absolute;
+      top: -3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-family: $heading-font;
+      font-size: 1.25rem;
+      font-weight: $weight-bold;
+      color: $primary;
+      background-color: $background;
+      padding-block: 0.5rem;
+      z-index: 2;
+    }
+  }
+
+  .sprint2-col {
+    align-self: start;
+
+    & > *:first-child {
+      margin-block-start: 0 !important;
+    }
+
+    h4 {
+      font-family: $base-font;
+      font-weight: $weight-bold;
+      color: $primary;
+      margin-block-start: 1.5rem;
+      margin-block-end: 0.5rem;
+
+      &:first-child {
+        margin-block-start: 0;
+      }
+    }
+
+    p {
+      font-family: $base-font;
+      font-size: 0.9375rem;
+      color: $text-color;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .sprint2-divider {
+    display: none;
+
+    @include respond-min($tablet) {
+      display: block;
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: -3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        background-image: linear-gradient(to bottom, $primary 0, $primary 10px, transparent 10px, transparent 50px);
+        background-size: 100% 50px;
+        background-repeat: repeat-y;
+        z-index: 0;
+      }
+
+      .sprint2-stalk {
+        position: absolute;
+        top: 1.5rem;
+        height: 2px;
+        background-color: $primary;
+        z-index: 1;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 10px;
+          background-color: $primary;
+        }
+      }
+
+      .sprint2-dot {
+        position: absolute;
+        top: 1.5rem;
+        transform: translateY(-50%);
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: $primary;
+        border-radius: 50%;
+        z-index: 2;
+      }
+
+      &--left {
+        .sprint2-stalk {
+          left: 0;
+          right: 50%;
+
+          &::after {
+            right: -0.0625rem;
+          }
+        }
+
+        .sprint2-dot {
+          left: -0.625rem;
+        }
+      }
+
+      &--right {
+        .sprint2-stalk {
+          left: 50%;
+          right: 0;
+
+          &::after {
+            left: -0.0625rem;
+          }
+        }
+
+        .sprint2-dot {
+          right: -0.625rem;
+        }
+      }
+    }
+  }
+
+  .sprint2-footer {
+    text-align: center;
+    max-width: 37.5rem;
+    margin-inline: auto;
+    margin-top: 4rem;
+
+    p {
+      font-family: $base-font;
+      color: $text-color;
+      line-height: 1.6;
+    }
   }
 }

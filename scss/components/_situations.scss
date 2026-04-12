@@ -11,12 +11,11 @@
   &__container {
     max-width: $content-width-small;
     margin-inline: auto;
-
-    // Mobiel: Gewoon alles onder elkaar (Flexbox is hier handiger dan grid)
     position: relative;
     display: flex;
     flex-direction: column;
     gap: clamp(2.5rem, 5vw, 3.75rem);
+    padding: 0 1.5rem;
 
     @include respond-min($tablet) {
       display: grid;
@@ -24,15 +23,16 @@
       grid-template-rows: auto auto;
       row-gap: 2rem;
       column-gap: 1rem;
+      padding: 0;
     }
   }
 
   &__wiggles {
     position: absolute;
-    inset: 0; // Vult de hele sectie
-    z-index: 0; // Áchter de content
+    inset: 0;
+    z-index: 0;
     pointer-events: none;
-    overflow: hidden; // Belangrijk: voorkomt dat de gedraaide wiggle buiten de sectie steekt
+    overflow: hidden;
   }
 
   &__wiggle {
@@ -41,30 +41,17 @@
     img {
       display: block;
       width: 100%;
-      // DE FIX: height: auto zorgt ervoor dat je SVG zijn natuurlijke,
-      // golvende Figma-verhouding weer terugkrijgt!
       height: auto;
     }
 
     &--orange {
-      // 1. Zet het exacte midden van de lijn in het exacte midden van de sectie
       top: 60%;
       left: 50%;
-
-      // 2. Maak hem gigantisch lang, zodat de uiteinden niet in beeld komen als we draaien
       width: 100vw;
-
-      // DE MAGIC KNOPPEN:
-      // translate(-50%, -50%) zorgt dat hij écht perfect in het midden ankert.
-      // Daarna roteren we hem (-34deg was jouw Figma instelling!)
       transform: translate(-50%, -50%) rotate(-34deg);
 
       @include respond-min($tablet) {
         width: 100vw;
-
-        // FINETUNING VOOR DESKTOP:
-        // Draai met 'rotate' om de hoek te bepalen (bijv -25deg tot -45deg)
-        // Verander de Y-waarde (-50%) naar bijv -40% (omlaag) of -60% (omhoog) om hem te verschuiven
         transform: translate(-50%, -60%) rotate(-18deg);
       }
     }
@@ -73,26 +60,22 @@
   &__card {
     border-radius: 1.25rem;
     padding: clamp(2rem, 5vw, 2.5rem) clamp(1.5rem, 4vw, 1.875rem);
-    z-index: 2; // Blijft boven de decoraties
+    z-index: 2;
 
     &--current {
-      background-color: #FFAEBE; // Het roze van Figma
+      background-color: #FFAEBE;
 
       @include respond-min($tablet) {
-        // Maak het expliciet voor de browser:
-        grid-row-start: 1;
-        grid-row-end: 2; // Dus: hij vult exact rij 1
+        grid-row: 1 / 2;
         grid-column: 1 / 7;
       }
     }
 
     &--desired {
-      background-color: $primary; // Het groen
+      background-color: $primary;
 
       @include respond-min($tablet) {
-        // Maak het expliciet:
-        grid-row-start: 2;
-        grid-row-end: 3; // Dus: hij vult exact rij 2
+        grid-row: 2 / 3;
         grid-column: 6 / 13;
       }
     }
@@ -103,10 +86,10 @@
     font-size: clamp(1.75rem, 3vw + 1rem, 2rem);
     font-weight: $weight-bold;
     margin-block-end: 1.25rem;
-    color: $primary; // Donkergroen voor de roze kaart
+    color: $primary;
 
     &--light {
-      color: $white; // Wit voor de groene kaart
+      color: $white;
     }
   }
 
@@ -121,29 +104,18 @@
     }
   }
 
-  // 1. De pijl is weer terug!
   &__arrow {
     display: none;
 
     @include respond-min($tablet) {
       display: block;
-
-      // Overlapt beide rijen
-      grid-row-start: 1;
-      grid-row-end: 2;
-
-      grid-column: 7 / 8; // Kolom 7
-
-      align-self: center; // Verticaal centreren binnen zijn cellen
-      justify-self: center; // Horizontaal centreren
-      z-index: 3; // Zorg dat hij bovenop ligt!
+      grid-row: 1 / 2;
+      grid-column: 7 / 8;
+      align-self: center;
+      justify-self: center;
+      z-index: 3;
       width: 5rem;
-
-      // DE MAGISCHE KNOP:
-      // Omdat we 'align-self: center' hebben gebruikt, kun je hem met translateY perfect positioneren.
-      // 0 = op de rand. 1rem = iets eronder. -1rem = iets erin.
-      // Ik heb de transformaties gefinetuned om ze pixel-perfect te positioneren.
-      transform: translateY(-1.5rem) translateX(0.5rem); // Iets omhooggetrokken en iets naar rechts
+      transform: translateY(-1.5rem) translateX(0.5rem);
 
       img {
         display: block;
@@ -153,24 +125,17 @@
     }
   }
 
-  // 2. Het vosje (maar 1 keer dit keer 😉)
   &__fox {
     display: none;
 
     @include respond-min($tablet) {
       display: block;
-
-      grid-row-start: 2;
-      grid-row-end: 3;
-
-      // FIX: Het vosje naar rechts verplaatsen, in de lege ruimte
-      grid-column: 4 / 6; // Kolom 7
-
-      align-self: end; // Duwt hem strak naar de bodem van zijn cel!
-      justify-self: start; // Duwt hem strak tegen het groene blok aan!
+      grid-row: 2 / 3;
+      grid-column: 4 / 6;
+      align-self: end;
+      justify-self: start;
       z-index: 3;
       width: 8rem;
-
 
       img {
         display: block;
@@ -180,5 +145,3 @@
     }
   }
 }
-
-// Einde van .situations

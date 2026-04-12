@@ -16,9 +16,9 @@ body {
 }
 
 .section {
-  padding: 4rem 0;
+  padding: 2rem 0;
 
-  @include respond-max($tablet) {
-    padding: 2rem 0;
+  @include respond-min($tablet) {
+    padding: 4rem 0;
   }
 }

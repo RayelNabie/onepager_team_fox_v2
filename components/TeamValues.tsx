@@ -26,12 +26,12 @@ const valuesData = [
     },
     {
         title: "Behulpzaam",
-        icon: "/icon-handen.svg",
+        icon: "/icon-praying.png",
         text: "Wij staan in dienst van de wijk. Dit betekent dat we eerst echt luisteren naar wat de mensen nodig hebben en ondersteuning bieden waar en wanneer zij dat zelf wensen."
     },
     {
         title: "Creativiteit",
-        icon: "/icon-handen.svg",
+        icon: "/icon-smart.png",
         text: "Wij ontwerpen vernieuwende oplossingen door met een frisse blik naar de huidige standaard te kijken. We durven vaste gewoontes ter discussie te stellen om iets te bedenken dat echt werkt en beter aansluit op de behoeften van de jongeren."
     }
 ];
