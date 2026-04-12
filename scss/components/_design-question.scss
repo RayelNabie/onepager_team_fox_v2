@@ -1,29 +1,56 @@
 @use '../abstracts' as *;
 
-@use '../abstracts' as *;
-
 .design-question {
-  background-color: transparent; // Laat de beige body-kleur door!
-  padding-block: clamp(4rem, 8vw, 6rem);
+  background-color: transparent;
+  padding-block: clamp(4rem, 8vw, 6rem) clamp(8rem, 20vw, 25rem);
   width: 100%;
   position: relative;
+  overflow: hidden;
 
-  // Horizontaal knippen we af, verticaal mag de roze lijn oneindig doorlopen!
-  overflow-x: clip;
-  overflow-y: visible;
+  &__wiggles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  &__wiggle {
+    position: absolute;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    &--pink {
+      width: 125vw;
+      left: -10vw;
+      top: 15%;
+      transform: translateY(0);
+      z-index: 0;
+
+      @include respond-min($tablet) {
+        width: 115vw;
+        left: -5vw;
+        transform: translateY(25%);
+      }
+    }
+  }
 
   &__container {
     max-width: $content-width-small;
     margin-inline: auto;
     position: relative;
-    z-index: 2; // Tekst ALTIJD boven de wiggles
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: clamp(3rem, 5vw, 4rem);
-
+    padding: 0 1.5rem;
   }
 
-  // Tekst Styling
   &__title {
     font-family: $heading-font;
     font-size: clamp(1.75rem, 3vw + 1rem, 2rem);
@@ -35,7 +62,7 @@
   &__quote-wrapper {
     position: relative;
     display: inline-block;
-    padding-inline-end: 3rem; // Ruimte voor het aanhalingsteken
+    padding-inline-end: 3rem;
   }
 
   &__quote {
@@ -52,9 +79,10 @@
     position: absolute;
     top: -1rem;
     right: 0;
+    width: 2.5rem;
+    height: auto;
   }
 
-  // Scope Grid
   &__scopes {
     display: flex;
     flex-direction: column;
@@ -62,7 +90,7 @@
 
     @include respond-min($tablet) {
       display: grid;
-      grid-template-columns: 1fr 1fr; // 2 gelijke kolommen
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
   }
@@ -77,10 +105,14 @@
 
   &__card-title {
     font-family: $heading-font;
-    font-size: $font-size-h1;
+    font-size: 1.5rem;
     font-weight: $weight-bold;
     color: $white;
     margin-block-end: 1rem;
+
+    @include respond-min($tablet) {
+      font-size: $font-size-h1;
+    }
   }
 
   &__card-text {
@@ -91,29 +123,27 @@
     color: rgba($white, 0.9);
   }
 
-  // Randvoorwaarden Styling
   &__conditions {
-    // Extra ruimte tussen de scope-blokken en de randvoorwaarden
     margin-block-start: clamp(2rem, 5vw, 4rem);
   }
 
   &__conditions-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; // Ruimte tussen de voorwaarden
+    gap: 1.5rem;
   }
 
   &__condition {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem; // Ruimte tussen het dikgedrukte woord en de tekst
+    gap: 0.25rem;
   }
 
   &__condition-title {
     font-family: $base-font;
     font-size: 1rem;
     font-weight: $weight-bold;
-    color: $primary; // Donkergroen (check je Figma, anders zwart/text-color maken)
+    color: $primary;
     margin: 0;
   }
 

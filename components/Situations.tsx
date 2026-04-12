@@ -45,14 +45,12 @@ const Situations = () => {
         <section className="situations" id="situaties" ref={containerRef}>
             <div className="situations__wiggles" aria-hidden="true">
                 <div className="situations__wiggle situations__wiggle--orange">
-                    {/* We gebruiken een gewone img tag voor achtergrond-SVGs, dat schaalt makkelijker mee */}
-                    <img src="/orange_line.svg" alt=""/>
+                    <Image src="/orange_line.svg" alt="" width={1542} height={1328} style={{ width: '100%', height: 'auto' }} />
                 </div>
             </div>
 
             <div className="situations__container container">
 
-                {/* ELEMENT 1: Roze blok (Rij 1, Links) */}
                 <div className="situations__card situations__card--current">
                     <h2 className="situations__title">Huidige situatie</h2>
                     <p className="situations__text">
@@ -70,17 +68,14 @@ const Situations = () => {
                     </p>
                 </div>
 
-                {/* ELEMENT 2: Pijl (Overlapt Rij 1 en 2, Midden) */}
                 <div className="situations__arrow">
                     <Image src="/arrow-down.svg" alt="Pijl naar beneden" width={80} height={80}/>
                 </div>
 
-                {/* ELEMENT 3: Vosje (Rij 2, net voor het groene blok) */}
                 <div className="situations__fox">
                     <Image src="/fox_visual.svg" alt="Zittend vosje" width={128} height={174}/>
                 </div>
 
-                {/* ELEMENT 4: Groene blok (Rij 2, Rechts) */}
                 <div className="situations__card situations__card--desired">
                     <h2 className="situations__title situations__title--light">Gewenste situatie</h2>
                     <p className="situations__text situations__text--light">
