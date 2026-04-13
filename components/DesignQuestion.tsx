@@ -5,6 +5,8 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import PinkLine from '../public/pink_line.svg';
+import QuoteIcon from '../public/quote.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +35,7 @@ const DesignQuestion = () => {
 
             <div className="design-question__wiggles" aria-hidden="true">
                 <div className="design-question__wiggle design-question__wiggle--pink">
-                    <Image src="/pink_line.svg" alt="" width={1440} height={696} style={{ width: '100%', height: 'auto' }} />
+                    <Image src={PinkLine} alt="" width={1440} height={696} style={{ width: '100%', height: 'auto' }} />
                 </div>
             </div>
 
@@ -48,7 +50,7 @@ const DesignQuestion = () => {
                             aanwezigheid en er een grotere bewustwording ontstaat over hun eigen smartphonegedrag?
                         </p>
                         <div className="design-question__quote-icon">
-                            <Image src="quote.svg" alt="Quote" width={48} height={48}/>
+                            <Image src={QuoteIcon} alt="Quote" width={48} height={48}/>
                         </div>
                     </div>
                 </div>

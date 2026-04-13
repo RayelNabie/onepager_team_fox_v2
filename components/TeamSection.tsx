@@ -1,11 +1,17 @@
 import Image from 'next/image';
+import MaureenImg from '../public/maureen.svg';
+import RayelImg from '../public/rayel.svg';
+import CelineImg from '../public/celine.svg';
+import AlejandroImg from '../public/alejandro.svg';
+import ShiteshImg from '../public/shitesh.svg';
+import LinkedinIcon from '../public/linkedin.svg';
 
 const teamMembers = [
-    {name: 'Maureen van Eijk', role: 'UX Designer', image: '/maureen.svg', linkedin: 'maureenvaneijk'},
-    {name: 'Rayel Nabie', role: 'Software Developer', image: '/rayel.svg', linkedin: 'rayelnabie'},
-    {name: 'Celine Scova Righini', role: 'Data Scientist', image: '/celine.svg', linkedin: 'celine-s-righini'},
-    {name: 'Alejandro Dullemond', role: 'Business & IT', image: '/alejandro.svg', linkedin: 'alejandrodullemond'},
-    {name: 'Shitesh da Silva', role: 'Software Developer', image: '/shitesh.svg', linkedin: 'shitesh-jay-da-silva'},
+    {name: 'Maureen van Eijk', role: 'UX Designer', image: MaureenImg, linkedin: 'maureenvaneijk'},
+    {name: 'Rayel Nabie', role: 'Software Developer', image: RayelImg, linkedin: 'rayelnabie'},
+    {name: 'Celine Scova Righini', role: 'Data Scientist', image: CelineImg, linkedin: 'celine-s-righini'},
+    {name: 'Alejandro Dullemond', role: 'Business & IT', image: AlejandroImg, linkedin: 'alejandrodullemond'},
+    {name: 'Shitesh da Silva', role: 'Software Developer', image: ShiteshImg, linkedin: 'shitesh-jay-da-silva'},
 ];
 
 const TeamSection = () => {
@@ -36,7 +42,7 @@ const TeamSection = () => {
                                 rel="noopener noreferrer"
                                 className="team__linkedin"
                             >
-                                <Image src="/linkedin.svg" alt="LinkedIn icon" width={16} height={16}/>
+                                <Image src={LinkedinIcon} alt="LinkedIn icon" width={16} height={16}/>
                                 <span>{member.linkedin}</span>
                             </a>
                         </div>

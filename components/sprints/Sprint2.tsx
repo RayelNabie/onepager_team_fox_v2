@@ -1,10 +1,14 @@
 import Image from 'next/image';
+import Sprint2Visual from '../../public/sprint_2_visual.svg';
+import Brainstormsessie from '../../public/brainstormsessie.svg';
+import LiftExperiment from '../../public/lift_experiment.svg';
+import PrototypeTussenonsje from '../../public/prototype_tussenonsje.svg';
 
 const Sprint2 = () => {
     return (
         <>
             <div className="process__timeline">
-                <Image src="/sprint_2_visual.svg" alt="Tijdlijn van de sprints" width={1036} height={200} style={{ width: '100%', height: 'auto' }} />
+                <Image src={Sprint2Visual} alt="Tijdlijn van de sprints" width={1036} height={200} style={{ width: '100%', height: 'auto' }} />
             </div>
 
             <div className="process__content process__content--sprint2">
@@ -36,12 +40,12 @@ const Sprint2 = () => {
                             <div className="sprint2-dot"></div>
                         </div>
                         <div className="sprint2-col">
-                            <Image src="brainstormsessie.svg" alt="Brainstormen" width={400}
+                            <Image src={Brainstormsessie} alt="Brainstormen" width={400}
                                    height={300} className="process__image"/>
                         </div>
 
                         <div className="sprint2-col">
-                            <Image src="lift_experiment.svg" alt="UX Experiment" width={400}
+                            <Image src={LiftExperiment} alt="UX Experiment" width={400}
                                    height={300} className="process__image"/>
                         </div>
                         <div className="sprint2-divider sprint2-divider--right">
@@ -93,7 +97,7 @@ const Sprint2 = () => {
                             <div className="sprint2-dot"></div>
                         </div>
                         <div className="sprint2-col">
-                            <Image src="prototype_tussenonsje.svg" alt="Prototype" width={400} height={300}
+                            <Image src={PrototypeTussenonsje} alt="Prototype" width={400} height={300}
                                    className="process__image"/>
                         </div>
 

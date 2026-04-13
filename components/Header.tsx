@@ -1,10 +1,10 @@
 import Image from 'next/image';
+import HillevlietBg from '../public/hillevliet.svg';
 
 const Header = () => {
     return (
         <header className="header">
-            <Image
-                src="/hillevliet.svg"
+            <Image src={HillevlietBg}
                 alt="Achtergrond Hillevliet"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center', zIndex: -1 }}

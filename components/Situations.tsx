@@ -5,6 +5,9 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
+import OrangeLine from '../public/orange_line.svg';
+import ArrowDown from '../public/arrow-down.svg';
+import FoxVisual from '../public/fox_visual.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +48,7 @@ const Situations = () => {
         <section className="situations" id="situaties" ref={containerRef}>
             <div className="situations__wiggles" aria-hidden="true">
                 <div className="situations__wiggle situations__wiggle--orange">
-                    <Image src="/orange_line.svg" alt="" width={1542} height={1328} style={{ width: '100%', height: 'auto' }} />
+                    <Image src={OrangeLine} alt="" width={1542} height={1328} style={{ width: '100%', height: 'auto' }} />
                 </div>
             </div>
 
@@ -69,11 +72,11 @@ const Situations = () => {
                 </div>
 
                 <div className="situations__arrow">
-                    <Image src="/arrow-down.svg" alt="Pijl naar beneden" width={80} height={80}/>
+                    <Image src={ArrowDown} alt="Pijl naar beneden" width={80} height={80}/>
                 </div>
 
                 <div className="situations__fox">
-                    <Image src="/fox_visual.svg" alt="Zittend vosje" width={128} height={174}/>
+                    <Image src={FoxVisual} alt="Zittend vosje" width={128} height={174}/>
                 </div>
 
                 <div className="situations__card situations__card--desired">

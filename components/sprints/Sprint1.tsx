@@ -1,11 +1,13 @@
 import Image from 'next/image';
+import Sprint1Visual from '../../public/sprint_1_visual.svg';
+import FotoGroup from '../../public/foto_gro-up.svg';
+import FlowerIcon from '../../public/flower.svg';
 
 const Sprint1 = () => {
     return (
         <>
             <div className="process__timeline">
-                <Image
-                    src="/sprint_1_visual.svg"
+                <Image src={Sprint1Visual}
                     alt="Tijdlijn van de sprints"
                     width={1440}
                     height={150}
@@ -58,15 +60,13 @@ const Sprint1 = () => {
 
                 <div className="process__image-column">
                     <div className="process__image-wrapper">
-                        <Image
-                            src="/foto_gro-up.svg"
+                        <Image src={FotoGroup}
                             alt="Team aan het werk in Sprint 1"
                             width={400}
                             height={300}
                             className="process__image"
                         />
-                        <Image
-                            src="/flower.svg"
+                        <Image src={FlowerIcon}
                             alt=""
                             width={60}
                             height={60}
