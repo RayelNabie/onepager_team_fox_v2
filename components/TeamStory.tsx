@@ -5,6 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import FlowerIcon from '../public/flower.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,9 +51,8 @@ const TeamStory = () => {
                 </div>
 
                 <div className="team-story__animation">
-                    <Image
-                        ref={flowerRef}
-                        src="/flower.svg"
+                    <Image ref={flowerRef}
+                        src={FlowerIcon}
                         alt="Decoratieve bloem"
                         width={250}
                         height={250}

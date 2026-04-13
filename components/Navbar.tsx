@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import LogoIcon from '../public/Logo.svg';
 
 const Navbar = () => {
     return (
@@ -7,7 +8,7 @@ const Navbar = () => {
             <div className="navbar__container">
                 <div className="navbar__logo">
                     <Link href="/">
-                        <Image src="/Logo.svg" alt="Fox Logo" width={80} height={80} priority />
+                        <Image src={LogoIcon} alt="Fox Logo" width={80} height={80} priority />
                     </Link>
                 </div>
 
