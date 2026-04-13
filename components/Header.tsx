@@ -5,14 +5,14 @@ const Header = () => {
     return (
         <header className="header">
             <Image src={HillevlietBg}
-                alt="Achtergrond Hillevliet"
-                fill
-                style={{ objectFit: 'cover', objectPosition: 'center', zIndex: -1 }}
-                priority
+                   alt="Achtergrond Hillevliet"
+                   fill
+                   className="header_image"
+                   priority
             />
             <div className="header__tagline">
-                <p>
-                    Samen hier. <br/> <em>Niet alleen online.</em>
+                <p className="header__tagline-text">
+                    Samen hier. <br/> Niet alleen online.
                 </p>
             </div>
         </header>
