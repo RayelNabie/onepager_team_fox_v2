@@ -3,20 +3,40 @@
 
 .design-scope {
   display: flex;
+  flex-direction: column;
+  width: 100%;
   max-width: $content-width-small;
   margin: 40px auto;
-  gap: 40px;
-  align-items: stretch;
+  gap: 20px;
+  padding-inline: 20px;
+  box-sizing: border-box;
+
+  @include respond-min($tablet) {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 40px;
+    padding-inline: 40px;
+  }
+
+  @include respond-min($desktop) {
+    padding-inline: 0;
+  }
 
   &__card {
     display: flex;
     flex: 1;
-    padding: 40px 50px;
+    padding: 30px 25px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 20px;
     border-radius: 20px;
     background: $primary;
+    z-index: map.get($z-index, positive);
+
+    @include respond-min($tablet) {
+      padding: 40px 50px;
+      gap: 40px;
+    }
 
     &-title {
       color: $background;
@@ -29,11 +49,10 @@
     &-text {
       color: $background;
       margin: 0;
-
       font-family: $base-font;
       font-size: $font-size-body;
       font-weight: $weight-light;
-      line-height: 25px;
+      line-height: 1.25;
     }
   }
 }

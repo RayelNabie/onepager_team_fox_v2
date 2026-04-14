@@ -1,12 +1,12 @@
 "use client";
-import {useRef} from 'react';
+import React, {type JSX, useRef} from 'react';
 import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 
-const DesignScope = () => {
+const DesignScope: () => React.JSX.Element = (): JSX.Element => {
     const scope = useRef<HTMLDivElement>(null);
 
-    useGSAP(() => {
+    useGSAP((): void => {
         gsap.from('.design-scope__card', {
             y: 40, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out",
             scrollTrigger: {trigger: scope.current, start: "top 80%", once: true}
@@ -16,6 +16,8 @@ const DesignScope = () => {
     return (
         <div className="design-scope" ref={scope}>
             <div className="design-scope__card">
+
+                {/* Within Scope */}
                 <h3 className="design-scope__card-title">Binnen de scope</h3>
                 <p className="design-scope__card-text">De reikwijdte van dit project richt zich specifiek op
                     jongvolwassenen in de leeftijdscategorie van 18 tot 25 jaar binnen de regio Rotterdam.
@@ -28,6 +30,8 @@ const DesignScope = () => {
                     spontaan sociaal contact wordt verlaagd.</p>
             </div>
             <div className="design-scope__card">
+
+                {/* Outside Scope */}
                 <h3 className="design-scope__card-title">Buiten de scope</h3>
                 <p className="design-scope__card-text">Buiten de kaders van dit onderzoek vallen doelgroepen
                     jonger dan 18 jaar en volwassenen ouder dan 25 jaar, waarbij ook de specifieke thuissituatie
