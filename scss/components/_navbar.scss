@@ -149,12 +149,12 @@
   &__link {
     color: $primary;
     font-family: $base-font;
-    font-size: $font-size-h1;
+    font-size: $font-size-h2;
     font-weight: $weight-light;
     text-decoration: none;
 
     @include respond-min($desktop) {
-      font-size: $font-size-h2;
+      font-size: $font-size-quote;
     }
 
     &:hover {

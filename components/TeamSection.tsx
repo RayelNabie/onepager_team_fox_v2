@@ -4,9 +4,11 @@ import RayelImg from '../public/rayel.svg';
 import CelineImg from '../public/celine.svg';
 import AlejandroImg from '../public/alejandro.svg';
 import ShiteshImg from '../public/shitesh.svg';
-import LinkedinIcon from '../public/linkedin.svg';
+import LinkedinIcon from './icons/Icons';
+import {type JSX} from "react";
+import type TeamMember from "@/types/TeamMemberInterface";
 
-const teamMembers = [
+const teamMembers: TeamMember[] = [
     {name: 'Maureen van Eijk', role: 'UX Designer', image: MaureenImg, linkedin: 'maureenvaneijk'},
     {name: 'Rayel Nabie', role: 'Software Developer', image: RayelImg, linkedin: 'rayelnabie'},
     {name: 'Celine Scova Righini', role: 'Data Scientist', image: CelineImg, linkedin: 'celine-s-righini'},
@@ -14,40 +16,35 @@ const teamMembers = [
     {name: 'Shitesh da Silva', role: 'Software Developer', image: ShiteshImg, linkedin: 'shitesh-jay-da-silva'},
 ];
 
-const TeamSection = () => {
+const TeamSection: () => void = (): JSX.Element => {
     return (
         <section className="team" id="team">
-            <div className="team__container container">
+            <div className="team__container">
                 <h2 className="team__title">Het Team</h2>
-
-                <div className="team__grid">
-                    {teamMembers.map((member, index) => (
-                        <div className="team__member" key={index}>
+                <div className="team__list">
+                    {teamMembers.map((member: TeamMember): JSX.Element => (
+                        <div className="team__member" key={member.name}>
                             <div className="team__image-wrapper">
-                                <Image
-                                    src={member.image}
-                                    alt={`Foto van ${member.name}`}
-                                    width={160}
-                                    height={160}
-                                    className="team__image"
-                                />
+                                <Image src={member.image} alt={`Foto van ${member.name}`} className="team__image"/>
                             </div>
+                            <div className="team__info">
+                                <h3 className="team__name">{member.name}</h3>
+                                <p className="team__role">{member.role}</p>
 
-                            <h3 className="team__name">{member.name}</h3>
-                            <p className="team__role">{member.role}</p>
-
-                            <a
-                                href={`https://linkedin.com/in/${member.linkedin}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="team__linkedin"
-                            >
-                                <Image src={LinkedinIcon} alt="LinkedIn icon" width={16} height={16}/>
-                                <span>{member.linkedin}</span>
-                            </a>
+                                <a
+                                    href={`https://linkedin.com/in/${member.linkedin}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="team__linkedin"
+                                >
+                                    <LinkedinIcon className="team__linkedin-icon"/>
+                                    <span>{member.linkedin}</span>
+                                </a>
+                            </div>
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );
