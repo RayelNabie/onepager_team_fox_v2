@@ -1,0 +1,107 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.design-conditions {
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+  padding-block: 40px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 30px;
+    padding-inline: 20px;
+    box-sizing: border-box;
+
+    @include respond-min($tablet) {
+      padding-inline: 40px;
+      gap: 40px;
+      max-width: $content-width-small;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $primary-dark;
+    font-family: $heading-font;
+    font-size: $font-size-h1;
+    font-weight: $weight-bold;
+    z-index: map.get($z-index, positive);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__condition {
+    z-index: map.get($z-index, positive);
+
+    &-title {
+      margin: 0;
+      color: $primary-dark;
+      font-family: $base-font;
+      font-size: $font-size-body;
+      font-weight: $weight-bold;
+      line-height: 1.4;
+    }
+
+    &-text {
+      margin: 0;
+      color: $primary-dark;
+      font-family: $base-font;
+      font-size: $font-size-body;
+      font-weight: $weight-light;
+      line-height: 1.6;
+    }
+  }
+
+  &__wiggles {
+    position: absolute;
+    inset: 0;
+    z-index: map.get($z-index, negative);
+    pointer-events: none;
+    overflow: visible;
+    height: 100%;
+  }
+
+  &__wiggle {
+    position: absolute;
+    display: block;
+    z-index: map.get($z-index, negative);
+    width: 250vw;
+    height: auto;
+
+    @include respond-min($tablet) {
+      width: 180vw;
+    }
+
+    @include respond-min($desktop) {
+      width: 160vw;
+    }
+
+    &--pink {
+      top: 50%;
+      left: 50%;
+      width: 250vw;
+      transform: translate(-50%, -50%) rotate(160deg) scaleX(-1);
+
+      @include respond-min($tablet) {
+        top: 35%;
+        left: 50%;
+        width: 190vw;
+        transform: translate(-50%, -50%) rotate(152deg) scaleX(-1);
+      }
+
+      @include respond-min($desktop) {
+        top: 40%;
+        left: 45%;
+        width: 160vw;
+        transform: translate(-50%, -50%) rotate(141deg) scaleX(-1);
+      }
+    }
+  }
+}
