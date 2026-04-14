@@ -1,3 +1,49 @@
-.design-condition {
-  border: 1px red solid;
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.design-conditions {
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  gap: 40px;
+
+  max-width: $content-width-small;
+
+  &__title {
+    margin: 0;
+
+    color: $primary-dark;
+    font-family: $heading-font;
+    font-size: $font-size-h1;
+    font-weight: $weight-bold;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__condition {
+    &-title {
+      margin: 0;
+
+      color: $primary-dark;
+      font-family: $base-font;
+      font-size: $font-size-body;
+      font-weight: $weight-bold;
+      line-height: 25px;
+    }
+
+    &-text {
+      margin: 0;
+
+      color: $primary-dark;
+      font-family: $base-font;
+      font-size: $font-size-body;
+      font-weight: $weight-light;
+      line-height: 25px;
+    }
+  }
+
 }
