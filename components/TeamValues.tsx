@@ -1,87 +1,94 @@
 "use client";
 
-import { useRef } from 'react';
-import Image from 'next/image';
+import React, {useRef} from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useGSAP} from '@gsap/react';
+
+import {HandheartIcon, LightbulbIcon, PrayinIcon, ScaleIcon, SmileyIcon} from "@/components/images/ImageLoader";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const valuesData = [
+interface ValueData {
+    title: string,
+    icon: React.ElementType,
+    text: string
+}
+
+const valuesData: ValueData[] = [
     {
         title: "Rechtvaardigheid",
-        icon: "/icon-weegschaal.svg",
-        text: "Wij kijken verder dan cijfers. In ons proces wegen we de verschillen tussen mensen actief mee. Iedere Rotterdammer verdient een eerlijke kans op digitale verbinding, ongeacht hun achtergrond of situatie."
+        icon: ScaleIcon,
+        text: "Wij behandelen iedereen op dezelfde manier en maken eerlijke keuzes. We luisteren naar iedereen en zorgen dat niemand wordt buitengesloten."
     },
     {
         title: "Plezier",
-        icon: "/icon-smiley.svg",
-        text: "Verbinding moet energie geven. We zorgen ervoor dat de drempel om onze oplossing te gebruiken zo laag mogelijk is; het moet een positieve ervaring zijn en absoluut geen last om te gebruiken."
+        icon: SmileyIcon,
+        text: "Wij vinden het belangrijk dat werken leuk is en dat we samen kunnen lachen. Als we plezier hebben in ons werk, gaat alles makkelijker en worden de resultaten beter."
     },
     {
         title: "Eerlijkheid",
-        icon: "/icon-handen.svg",
+        icon: HandheartIcon,
         text: "Wij zijn glashelder over elke stap die we zetten. Door transparant te zijn over ons proces en de keuzes die we maken, bouwen we aan een fundament van vertrouwen met de gemeenschap in Rotterdam-Zuid."
     },
     {
         title: "Behulpzaam",
-        icon: "/icon-praying.png",
-        text: "Wij staan in dienst van de wijk. Dit betekent dat we eerst echt luisteren naar wat de mensen nodig hebben en ondersteuning bieden waar en wanneer zij dat zelf wensen."
+        icon: PrayinIcon,
+        text: "Wij vertellen elkaar altijd de waarheid, ook als dat soms lastig is. We zijn open over wat we doen, zodat we elkaar écht kunnen vertrouwen."
     },
     {
         title: "Creativiteit",
-        icon: "/icon-smart.png",
-        text: "Wij ontwerpen vernieuwende oplossingen door met een frisse blik naar de huidige standaard te kijken. We durven vaste gewoontes ter discussie te stellen om iets te bedenken dat echt werkt en beter aansluit op de behoeften van de jongeren."
+        icon: LightbulbIcon,
+        text: "Wij durven nieuwe dingen te proberen en bedenken slimme oplossingen voor problemen. We staan open voor alle ideeën en kijken op een andere manier naar ons werk."
     }
 ];
 
 const TeamValues = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
+        const containerRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(() => {
-        const cards = gsap.utils.toArray('.team-values__card');
+        useGSAP(() => {
+            const cards = gsap.utils.toArray('.team-values__card');
 
-        gsap.from(cards, {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top 80%",
-                once: true,
-            }
-        });
-    }, { scope: containerRef });
-
-    return (
-        <section className="team-values" id="teamwaarden" ref={containerRef}>
-            <div className="team-values__container container">
+            gsap.from(cards, {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 80%",
+                    once: true,
+                }
+            });
+        }, {scope: containerRef});
+        return (
+            <section className="team-values" id="teamwaarden" ref={containerRef}>
                 <h2 className="team-values__title">Teamwaarden</h2>
 
                 <div className="team-values__grid">
-                    {valuesData.map((item, index) => (
-                        <div className="team-values__card" key={index}>
-                            <h3 className="team-values__card-title">{item.title}</h3>
-                            <div className="team-values__card-content">
-                                <div className="team-values__icon">
-                                    <Image src={item.icon} alt={`${item.title} icoon`} width={40} height={40} />
+                    {valuesData.map((item: ValueData, index: number) => {
+                        const IconContent = item.icon;
+
+                        return (
+                            <div className="team-values__card" key={index}>
+                                <h3 className="team-values__card-title">{item.title}</h3>
+                                <div className="team-values__card-content">
+                                        <IconContent className="team-values__icon"/>
+                                    <p className="team-values__text">{item.text}</p>
                                 </div>
-                                <p className="team-values__text">{item.text}</p>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 <div className="team-values__scroll">
                     <p>Scroll voor meer</p>
-                    <span>&rarr;</span>
+                    <span className="team-values__scroll-arrow">&rarr;</span>
                 </div>
-            </div>
-        </section>
-    );
-};
+            </section>
+        );
+    }
+;
 
 export default TeamValues;
