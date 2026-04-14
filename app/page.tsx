@@ -6,6 +6,8 @@ import TeamValues from "@/components/TeamValues";
 import Situations from "@/components/Situations";
 import DesignQuestion from "@/components/DesignQuestion";
 import Process from "@/components/Process";
+import DesignScope from "@/components/DesignScope";
+import DesignConditions from "@/components/DesignConditions";
 
 export default function Home() {
     return (
@@ -17,6 +19,8 @@ export default function Home() {
             <TeamValues/>
             <Situations/>
             <DesignQuestion/>
+            <DesignScope/>
+            <DesignConditions/>
             <Process/>
         </main>
     );
