@@ -1,19 +1,19 @@
 "use client";
 
-import { useRef } from 'react';
+import React, {type JSX, useRef} from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useGSAP} from '@gsap/react';
 import FlowerIcon from '../public/flower.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TeamStory = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const flowerRef = useRef<HTMLImageElement>(null);
+const TeamStory: () => void = (): JSX.Element => {
+    const containerRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
+    const flowerRef: React.RefObject<HTMLImageElement | null> = useRef<HTMLImageElement>(null);
 
-    useGSAP(() => {
+    useGSAP((): void => {
         gsap.from(flowerRef.current, {
             scale: 0,
             opacity: 0,
@@ -25,20 +25,21 @@ const TeamStory = () => {
                 once: true,
             }
         });
-    }, { scope: containerRef });
+    }, {scope: containerRef});
 
     return (
         <section className="team-story" id="team-story" ref={containerRef}>
-            <div className="team-story__container container">
+            <div className="team-story__container">
 
                 <div className="team-story__content">
                     <h2 className="team-story__title">Team story</h2>
-                    <div className="team-story__text">
-                        <p><b>Wij zijn Team Fox, een interdisciplinaire groep studenten die met een
+                    <div className="team-story__description">
+                        <p className="team-story__subtitle"><b>Wij zijn Team Fox, een interdisciplinaire groep studenten
+                            die met een
                             gezamenlijke missie voor de stad werkt.</b>
 
                         </p>
-                        <p>
+                        <p className="team-story__text">
                             Onze kracht zit in het combineren van inzichten vanuit vijf verschillende
                             perspectieven, waarbij we expertise uit design, IT, informatica, business & IT en
                             applied data science naadloos samenbrengen. Door deze verschillende achtergronden
@@ -52,13 +53,11 @@ const TeamStory = () => {
 
                 <div className="team-story__animation">
                     <Image ref={flowerRef}
-                        src={FlowerIcon}
-                        alt="Decoratieve bloem"
-                        width={250}
-                        height={250}
+                           src={FlowerIcon}
+                           alt="Decoratieve bloem"
+                           className="team-story__animation-image"
                     />
                 </div>
-
             </div>
         </section>
     );
