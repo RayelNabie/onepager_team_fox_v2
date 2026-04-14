@@ -1,14 +1,33 @@
 "use client";
-import { useRef } from 'react';
+import {useRef} from 'react';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import {useGSAP} from '@gsap/react';
 
 const conditions = [
-    { title: "Veiligheid", text: "Een veilige sociale omgeving is een basisvoorwaarde..." },
-    { title: "Toegankelijkheid", text: "Het gebruik mag geen financiële drempel inbrengen..." },
-    { title: "Geen kosten", text: "De oplossing is kosteloos voor de doelgroep." },
-    { title: "Schaalbaarheid", text: "De aanpak sluit aan op de leefwereld in Rotterdam." },
-    { title: "Haalbaarheid", text: "Realistisch ontwikkelbaar binnen het semester." }
+    {
+        title: "Fysiek karakter",
+        text: "Het ontwerp moet een tastbaar object bevatten dat de visuele en fysieke aandacht opeist om digitale notificaties te overstemmen."
+    },
+    {
+        title: "groepsdeelname",
+        text: "De werking van de oplossing moet afhankelijk zijn van de inzet van de gehele vriendengroep."
+    },
+    {
+        title: "Toegankelijkheid",
+        text: "De interventie moet laagdrempelig, begrijpelijk en bruikbaar zijn voor jongeren met uiteenlopende achtergronden en taalniveaus."
+    },
+    {
+        title: "Geen kosten",
+        text: "Er mag geen financiële drempel zijn voor de doelgroep om deel te nemen aan de interventie."
+    },
+    {
+        title: "Speelsheid",
+        text: "Het ontwerp moet gebruikmaken van uitdagende of competitieve elementen die aansluiten bij de belevingswereld van de doelgroep."
+    },
+    {
+        title: "Haalbaarheid",
+        text: "Het prototype moet binnen de resterende weken van het semester technisch en organisatorisch gerealiseerd en getest kunnen worden."
+    }
 ];
 
 const DesignConditions = () => {
@@ -17,9 +36,9 @@ const DesignConditions = () => {
     useGSAP(() => {
         gsap.from('.design-question__condition', {
             y: 20, opacity: 0, duration: 0.6, stagger: 0.15, ease: "power2.out",
-            scrollTrigger: { trigger: scope.current, start: "top 85%", once: true }
+            scrollTrigger: {trigger: scope.current, start: "top 85%", once: true}
         });
-    }, { scope });
+    }, {scope});
 
     return (
         <div className="design-question__conditions-section" ref={scope}>
