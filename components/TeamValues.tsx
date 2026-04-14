@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useRef} from 'react';
+import React, {type JSX, useRef} from 'react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
@@ -43,11 +43,11 @@ const valuesData: ValueData[] = [
     }
 ];
 
-const TeamValues = () => {
+const TeamValues: () => React.JSX.Element = (): JSX.Element => {
         const containerRef = useRef<HTMLDivElement>(null);
 
-        useGSAP(() => {
-            const cards = gsap.utils.toArray('.team-values__card');
+        useGSAP((): void => {
+            const cards: ValueData[] = gsap.utils.toArray('.team-values__card');
 
             gsap.from(cards, {
                 y: 50,
@@ -62,19 +62,22 @@ const TeamValues = () => {
                 }
             });
         }, {scope: containerRef});
+
         return (
             <section className="team-values" id="teamwaarden" ref={containerRef}>
+                {/* Title */}
                 <h2 className="team-values__title">Teamwaarden</h2>
 
+                {/* Scrolling box */}
                 <div className="team-values__grid">
-                    {valuesData.map((item: ValueData, index: number) => {
-                        const IconContent = item.icon;
+                    {valuesData.map((item: ValueData, index: number): React.JSX.Element => {
+                        const IconContent: React.ElementType = item.icon;
 
                         return (
                             <div className="team-values__card" key={index}>
                                 <h3 className="team-values__card-title">{item.title}</h3>
                                 <div className="team-values__card-content">
-                                        <IconContent className="team-values__icon"/>
+                                    <IconContent className="team-values__icon"/>
                                     <p className="team-values__text">{item.text}</p>
                                 </div>
                             </div>
@@ -82,10 +85,12 @@ const TeamValues = () => {
                     })}
                 </div>
 
+                {/* Scroll voor meer element */}
                 <div className="team-values__scroll">
                     <p>Scroll voor meer</p>
                     <span className="team-values__scroll-arrow">&rarr;</span>
                 </div>
+
             </section>
         );
     }
