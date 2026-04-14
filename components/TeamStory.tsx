@@ -9,7 +9,7 @@ import FlowerIcon from '../public/flower.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TeamStory: () => void = (): JSX.Element => {
+const TeamStory: () => React.JSX.Element = (): JSX.Element => {
     const containerRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
     const flowerRef: React.RefObject<HTMLImageElement | null> = useRef<HTMLImageElement>(null);
 
@@ -30,8 +30,9 @@ const TeamStory: () => void = (): JSX.Element => {
     return (
         <section className="team-story" id="team-story" ref={containerRef}>
             <div className="team-story__container">
-
                 <div className="team-story__content">
+
+                    {/* Team Story */}
                     <h2 className="team-story__title">Team story</h2>
                     <div className="team-story__description">
                         <p className="team-story__subtitle"><b>Wij zijn Team Fox, een interdisciplinaire groep studenten
@@ -51,6 +52,7 @@ const TeamStory: () => void = (): JSX.Element => {
                     </div>
                 </div>
 
+                {/* Flower */}
                 <div className="team-story__animation">
                     <Image ref={flowerRef}
                            src={FlowerIcon}
@@ -58,6 +60,7 @@ const TeamStory: () => void = (): JSX.Element => {
                            className="team-story__animation-image"
                     />
                 </div>
+
             </div>
         </section>
     );

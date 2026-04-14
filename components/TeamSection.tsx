@@ -5,7 +5,7 @@ import CelineImg from '../public/celine.svg';
 import AlejandroImg from '../public/alejandro.svg';
 import ShiteshImg from '../public/shitesh.svg';
 import {LinkedinIcon} from '@/components/images/ImageLoader';
-import {type JSX} from "react";
+import React, {type JSX} from "react";
 import type TeamMember from "@/types/TeamMemberInterface";
 
 const teamMembers: TeamMember[] = [
@@ -16,11 +16,15 @@ const teamMembers: TeamMember[] = [
     {name: 'Shitesh da Silva', role: 'Software Developer', image: ShiteshImg, linkedin: 'shitesh-jay-da-silva'},
 ];
 
-const TeamSection: () => void = (): JSX.Element => {
+const TeamSection: () => React.JSX.Element = (): JSX.Element => {
     return (
         <section className="team" id="team">
             <div className="team__container">
+
+                {/* Team Title */}
                 <h2 className="team__title">Het Team</h2>
+
+                {/* Team Members */}
                 <div className="team__list">
                     {teamMembers.map((member: TeamMember): JSX.Element => (
                         <div className="team__member" key={member.name}>
