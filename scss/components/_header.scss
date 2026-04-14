@@ -51,12 +51,12 @@
 
       color: $secondary;
       font-family: $heading-font;
-      font-size: $font-size-h1;
+      font-size: $font-size-h2;
       font-style: italic;
       font-weight: $weight-bold;
 
       @include respond-min($tablet) {
-        font-size: $font-size-slogan;
+        font-size: $font-size-h1;
       }
     }
   }
