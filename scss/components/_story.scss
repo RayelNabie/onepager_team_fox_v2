@@ -2,55 +2,81 @@
 
 .team-story {
   background-color: $background;
-  padding: 5rem 1.25rem;
   width: 100%;
 
-  @include respond-min($tablet) {
-    padding: 5rem 0;
-  }
-
   &__container {
+    display: flex;
+    flex-direction: column;
     max-width: $content-width-small;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    align-items: center;
+    gap: 40px;
+
+    padding-block: 40px;
+    padding-inline: 20px;
+
 
     @include respond-min($tablet) {
-      grid-template-columns: 1.8fr 1fr;
-      gap: 3.75rem;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 40px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include respond-min($tablet) {
+      flex: 1;
+      gap: 40px;
     }
   }
 
   &__title {
+    margin: 0;
+
     font-family: $heading-font;
-    color: $primary;
-    font-size: 2rem;
+    color: $primary-dark;
+    font-size: $font-size-h2;
+    letter-spacing: 1.2px;
     font-weight: $weight-bold;
-    margin-bottom: 1.5rem;
+
+    @include respond-min($tablet) {
+      font-size: $font-size-h1;
+    }
   }
 
-  &__text {
-    p {
-      font-family: $base-font;
-      color: $text-color;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+  &__subtitle,
+  &__text {
+    margin: 0;
+
+    font-family: $base-font;
+    color: $text-color;
+    font-size: $font-size-body;
+    line-height: 1.6;
   }
 
   &__animation {
     display: flex;
     justify-content: center;
 
+    width: 100%;
+
     @include respond-min($tablet) {
+      flex: 1;
       justify-content: flex-end;
+    }
+
+    &-image {
+      max-width: 100%;
+      height: auto;
     }
   }
 }
