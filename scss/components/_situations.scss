@@ -1,106 +1,122 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
 .situations {
-  background-color: $background;
-  padding-block: clamp(5rem, 8vw, 6rem);
-  width: 100%;
   position: relative;
   overflow-x: clip;
   overflow-y: visible;
+  padding: 60px 0;
+
+  background-color: $background;
 
   &__container {
-    max-width: $content-width-small;
-    margin-inline: auto;
-    position: relative;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: clamp(2.5rem, 5vw, 3.75rem);
-    padding: 0 1.5rem;
+    gap: 40px;
+
+    padding: 0 20px;
 
     @include respond-min($tablet) {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto auto;
-      row-gap: 2rem;
-      column-gap: 1rem;
-      padding: 0;
+      padding: 39px 60px;
+      gap: 60px;
+    }
+
+    @include respond-min($desktop) {
+      padding: 39px 99px;
+      gap: 79px;
     }
   }
 
-  &__wiggles {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
+  &__row {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 
-  &__wiggle {
-    position: absolute;
+    width: 100%;
 
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
+    @include respond-min($tablet) {
+      flex-direction: row;
+      align-items: center;
+
+      &--top {
+        align-self: flex-start;
+        gap: 40px;
+      }
+
+      &--bottom {
+        justify-content: flex-end;
+        align-self: flex-end;
+        gap: 40px;
+      }
     }
 
-    &--orange {
-      top: 60%;
-      left: 50%;
-      width: 100vw;
-      transform: translate(-50%, -50%) rotate(-34deg);
+    @include respond-min($desktop) {
+      &--top {
+        gap: 102px;
+      }
 
-      @include respond-min($tablet) {
-        width: 100vw;
-        transform: translate(-50%, -60%) rotate(-18deg);
+      &--bottom {
+        padding-left: 84px;
+        gap: 80px;
       }
     }
   }
 
   &__card {
-    border-radius: 1.25rem;
-    padding: clamp(2rem, 5vw, 2.5rem) clamp(1.5rem, 4vw, 1.875rem);
-    z-index: 2;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: map.get($z-index, positive);
+
+    width: 100%;
+    padding: 30px 25px;
+    border-radius: 20px;
+
+
+    @include respond-min($tablet) {
+      width: 80%;
+      padding: 40px 50px;
+    }
+
+    @include respond-min($desktop) {
+      width: 742px;
+    }
 
     &--current {
-      background-color: #FFAEBE;
-
-      @include respond-min($tablet) {
-        grid-row: 1 / 2;
-        grid-column: 1 / 7;
-      }
+      background-color: $secondary;
     }
 
     &--desired {
-      background-color: $primary;
-
-      @include respond-min($tablet) {
-        grid-row: 2 / 3;
-        grid-column: 6 / 13;
-      }
+      background-color: $primary-dark;
     }
   }
 
   &__title {
+    margin: 0;
+
     font-family: $heading-font;
-    font-size: clamp(1.75rem, 3vw + 1rem, 2rem);
+    font-size: $font-size-h1;
     font-weight: $weight-bold;
-    margin-block-end: 1.25rem;
     color: $primary;
+    letter-spacing: 1.2px;
 
     &--light {
-      color: $white;
+      color: $secondary;
     }
   }
 
   &__text {
+    margin: 0;
+
     font-family: $base-font;
-    font-size: 0.9375rem;
-    line-height: 1.6;
+    font-size: $font-size-body;
+    line-height: 1.5;
     color: $text-color;
 
     &--light {
-      color: rgba($white, 0.9);
+      color: $secondary;
     }
   }
 
@@ -108,20 +124,16 @@
     display: none;
 
     @include respond-min($tablet) {
-      display: block;
-      grid-row: 1 / 2;
-      grid-column: 7 / 8;
-      align-self: center;
-      justify-self: center;
-      z-index: 3;
-      width: 5rem;
-      transform: translateY(-1.5rem) translateX(0.5rem);
+      display: flex;
+      flex-shrink: 0;
 
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
+      width: 100px;
+      height: 100px;
+    }
+
+    @include respond-min($desktop) {
+      width: 150px;
+      height: 150px;
     }
   }
 
@@ -130,18 +142,52 @@
 
     @include respond-min($tablet) {
       display: block;
-      grid-row: 2 / 3;
-      grid-column: 4 / 6;
-      align-self: end;
-      justify-self: start;
-      z-index: 3;
-      width: 8rem;
+      z-index: map.get($z-index, positive);
+      flex-shrink: 0;
 
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
+      width: 180px;
+      height: auto;
+    }
+
+    @include respond-min($desktop) {
+      width: 286.54px;
+      height: 351.128px;
+    }
+  }
+
+  &__wiggles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: visible;
+
+    height: 100%;
+  }
+
+  &__wiggle {
+    display: none;
+
+    @include respond-min($tablet) {
+      position: absolute;
+      display: block;
+
+      width: 180vw;
+      height: auto;
+    }
+
+    &--orange {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-34deg);
+
+      @include respond-min($tablet) {
+        left: 40%;
+        transform: translate(-50%, -60%) rotate(-15deg);
+
+        width: 150vw;
       }
     }
   }
+
 }
