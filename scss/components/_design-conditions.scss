@@ -97,10 +97,10 @@
       }
 
       @include respond-min($desktop) {
-        top: 40%;
+        top: 0;
         left: 45%;
-        width: 160vw;
-        transform: translate(-50%, -50%) rotate(141deg) scaleX(-1);
+        width: 120vw;
+        transform: translate(-50%, -50%) rotate(180deg) scaleX(-1);
       }
     }
   }
