@@ -4,7 +4,7 @@ import path from "path";
 const nextConfig: NextConfig = {
   output: 'export',
   distDir: 'dist',
-  basePath: '',
+  basePath: '/2025_2026/idp_ds_t9',
   images: {
     unoptimized: true,
   },
