@@ -3,7 +3,7 @@
 import React, {useState, useEffect, type JSX} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import LogoIcon from '../public/Logo.svg';
+import LogoIcon from '@public/Logo.svg';
 
 const Navbar: () => React.JSX.Element = (): JSX.Element => {
     const [isScrolled, setIsScrolled] = useState(false);

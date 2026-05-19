@@ -1,10 +1,10 @@
 import React, {type JSX} from 'react';
 import Image from 'next/image';
-import Sprint1Visual from '../../public/sprint_1_visual.svg';
-import FoxVisualResearch from '../../public/fox_visual_research.svg';
-import InterviewSol from '../../public/interview_sol.svg';
-import StakeholderMap from '../../public/stakeholdermap.svg';
-import FlowerIcon from '../../public/flower.svg';
+import Sprint1Visual from '@public/sprint_1_visual.svg';
+import FoxVisualResearch from '@public/fox_visual_research.svg';
+import InterviewSol from '@public/interview_sol.svg';
+import StakeholderMap from '@public/stakeholdermap.svg';
+import FlowerIcon from '@public/flower.svg';
 import SprintLayout, {SprintDivider} from "../common/SprintLayout";
 
 const Sprint1: () => React.JSX.Element = (): JSX.Element => {

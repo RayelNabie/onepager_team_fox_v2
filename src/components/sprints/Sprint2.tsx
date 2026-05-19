@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Brainstormsessie from '../../public/brainstormsessie.svg';
-import LiftExperiment from '../../public/lift_experiment.svg';
-import PrototypeTussenonsje from '../../public/prototype_tussenonsje.svg';
-import Sprint2Visual from '../../public/sprint_2_visual.svg';
+import Brainstormsessie from '@public/brainstormsessie.svg';
+import LiftExperiment from '@public/lift_experiment.svg';
+import PrototypeTussenonsje from '@public/prototype_tussenonsje.svg';
+import Sprint2Visual from '@public/sprint_2_visual.svg';
 import SprintLayout, {SprintDivider} from "../common/SprintLayout";
 
 const Sprint2 = () => {

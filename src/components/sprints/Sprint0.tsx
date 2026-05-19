@@ -1,12 +1,12 @@
 import React, {type JSX} from "react";
 import Image from 'next/image';
-import FotoTakumi from '../../public/Foto_Takumi.svg';
-import Sprint0Pic1 from '../../public/sprint0_picture_1.svg';
-import Sprint0Pic2 from '../../public/sprint0_picture_2.svg';
-import Sprint0Pic3 from '../../public/sprint0_picture_3.svg';
-import Hackathon1 from '../../public/hackathon_1.svg';
-import Hackathon2 from '../../public/hackathon_2.svg';
-import Sprint0Visual from '../../public/sprint_0_visual.svg';
+import FotoTakumi from '@public/Foto_Takumi.svg';
+import Sprint0Pic1 from '@public/sprint0_picture_1.svg';
+import Sprint0Pic2 from '@public/sprint0_picture_2.svg';
+import Sprint0Pic3 from '@public/sprint0_picture_3.svg';
+import Hackathon1 from '@public/hackathon_1.svg';
+import Hackathon2 from '@public/hackathon_2.svg';
+import Sprint0Visual from '@public/sprint_0_visual.svg';
 import SprintLayout, {SprintDivider} from "../common/SprintLayout";
 
 const Sprint0: () => React.JSX.Element = (): JSX.Element => {
