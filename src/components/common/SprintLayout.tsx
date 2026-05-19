@@ -52,7 +52,7 @@ const SprintLayout = ({
         {(footerTitle || footerContent) && (
           <div className={`sprint${sprintNumber}__footer sprint-layout__footer`}>
             {footerTitle && <h4>{footerTitle}</h4>}
-            {footerContent && <p>{footerContent}</p>}
+            {footerContent}
           </div>
         )}
       </div>
