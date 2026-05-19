@@ -1,10 +1,10 @@
 import React, {type JSX} from 'react';
 import Image from 'next/image';
-import Sprint3Visual from '../../public/sprint_3_visual.svg';
-import Gigamapping from '../../public/gigamapping.svg';
-import PhubbomConcept from '../../public/phubbom_eerste_concept.svg';
-import TestingPhubbom from '../../public/testing_phubbom_prototyping.svg';
-import FlowerIcon from '../../public/flower.svg';
+import Sprint3Visual from '@public/sprint_3_visual.svg';
+import Gigamapping from '@public/gigamapping.svg';
+import PhubbomConcept from '@public/phubbom_eerste_concept.svg';
+import TestingPhubbom from '@public/testing_phubbom_prototyping.svg';
+import FlowerIcon from '@public/flower.svg';
 import SprintLayout, {SprintDivider} from "@/components/common/SprintLayout";
 
 const Sprint3: () => React.JSX.Element = (): JSX.Element => {
@@ -47,7 +47,7 @@ const Sprint3: () => React.JSX.Element = (): JSX.Element => {
           Deze nieuwe visie heeft geleid tot de ontwikkeling van nieuwe prototype. Dit is een hybride prototype in de
           vorm van een speelgoedbom die passief op tafel ligt tijdens het samenzijn in zogeheten Third Spaces. Zodra
           iemand naar zijn telefoon grijpt, wordt de bom door de groep geactiveerd en bij de phubber geplaatst. Er start
-          direct een hoorbare timer en een uitdagende challenge (bijv. "Noem 5 metrostations in Rotterdam"). De
+          direct een hoorbare timer en een uitdagende challenge (bijv. &#34;Noem 5 metrostations in Rotterdam&#34;). De
           combinatie van tijdsdruk, adrenaline en lichte sociale druk dwingt de phubber om de telefoon weg te leggen en
           de focus terug te leggen bij de vriendengroep.
         </p>

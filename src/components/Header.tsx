@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import HillevlietBg from '../public/hillevliet.svg';
+import HillevlietBg from '@public/hillevliet.svg';
 import React, {type JSX} from "react";
 
 const Header = (): JSX.Element => {

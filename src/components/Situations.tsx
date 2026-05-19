@@ -1,31 +1,15 @@
 "use client";
 
-import React, {useRef, type JSX} from 'react';
+import {type JSX} from 'react';
 import Image from 'next/image';
-import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import {useGSAP} from '@gsap/react';
-import OrangeLine from '../public/orange_line.svg';
+import OrangeLine from '@public/orange_line.svg';
 import {ArrowdownIcon} from "@/components/images/ImageLoader";
-import FoxVisual from '../public/fox_visual.svg';
+import FoxVisual from '@public/fox_visual.svg';
 
-gsap.registerPlugin(ScrollTrigger);
+import useSituationsAnimation from "@/hooks/useSituationsAnimation";
 
-const Situations: () => React.JSX.Element = (): JSX.Element => {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useGSAP((): void => {
-        const arrow = '.situations__arrow';
-
-        gsap.from(arrow, {
-            opacity: 0, scale: 0.5, duration: 0.5, delay: 0.6,
-            scrollTrigger: {trigger: containerRef.current, start: "top 60%", once: true}
-        });
-
-        gsap.to(arrow, {
-            y: 12, x: 8, rotation: 3, repeat: -1, yoyo: true, duration: 1.2, ease: "sine.inOut"
-        });
-    }, {scope: containerRef});
+const Situations = (): JSX.Element => {
+    const containerRef = useSituationsAnimation();
 
     return (
         <section className="situations" id="situaties" ref={containerRef}>
@@ -42,7 +26,7 @@ const Situations: () => React.JSX.Element = (): JSX.Element => {
                     <div className="situations__card situations__card--current">
                         <h2 className="situations__title">Huidige situatie</h2>
                         <p className="situations__text">
-                            In Rotterdamse &#39;Third Spaces&#39;, zoals terrassen, café’s en jongerenhubs, is phubbing
+                            In Rotterdamse &#39;Third Spaces&#39;, zoals terrassen, café&#39;s en jongerenhubs, is phubbing
                             de
                             nieuwe sociale standaard geworden. Smartphones fungeren als een reflexmatige buffer om elk
                             moment van stilte of sociale ongemakkelijkheid te vermijden. Wetenschappelijk onderzoek

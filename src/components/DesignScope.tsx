@@ -1,20 +1,14 @@
 "use client";
-import React, {type JSX, useRef} from 'react';
-import gsap from 'gsap';
-import {useGSAP} from '@gsap/react';
 
-const DesignScope: () => React.JSX.Element = (): JSX.Element => {
-    const scope = useRef<HTMLDivElement>(null);
+import {type JSX} from 'react';
 
-    useGSAP((): void => {
-        gsap.from('.design-scope__card', {
-            y: 40, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out",
-            scrollTrigger: {trigger: scope.current, start: "top 80%", once: true}
-        });
-    }, {scope});
+import useDesignScopeAnimation from "@/hooks/useDesignScopeAnimation";
+
+const DesignScope = (): JSX.Element => {
+    const containerRef = useDesignScopeAnimation();
 
     return (
-        <div className="design-scope" ref={scope}>
+        <div className="design-scope" ref={containerRef}>
             <div className="design-scope__card">
 
                 {/* Within Scope */}

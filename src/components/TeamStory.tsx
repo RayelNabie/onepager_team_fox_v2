@@ -1,31 +1,13 @@
 "use client";
 
-import React, {type JSX, useRef} from 'react';
+import {type JSX} from 'react';
 import Image from 'next/image';
-import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import {useGSAP} from '@gsap/react';
-import FlowerIcon from '../public/flower.svg';
+import FlowerIcon from '@public/flower.svg';
 
-gsap.registerPlugin(ScrollTrigger);
+import useTeamStoryAnimation from "@/hooks/useTeamStoryAnimation";
 
-const TeamStory: () => React.JSX.Element = (): JSX.Element => {
-    const containerRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
-    const flowerRef: React.RefObject<HTMLImageElement | null> = useRef<HTMLImageElement>(null);
-
-    useGSAP((): void => {
-        gsap.from(flowerRef.current, {
-            scale: 0,
-            opacity: 0,
-            duration: 1,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-                trigger: flowerRef.current,
-                start: "top 80%",
-                once: true,
-            }
-        });
-    }, {scope: containerRef});
+const TeamStory = (): JSX.Element => {
+    const {containerRef, flowerRef} = useTeamStoryAnimation();
 
     return (
         <section className="team-story" id="team-story" ref={containerRef}>

@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import MaureenImg from '../public/maureen.svg';
-import RayelImg from '../public/rayel.svg';
-import CelineImg from '../public/celine.svg';
-import AlejandroImg from '../public/alejandro.svg';
-import ShiteshImg from '../public/shitesh.svg';
+import MaureenImg from '@public/maureen.svg';
+import RayelImg from '@public/rayel.svg';
+import CelineImg from '@public/celine.svg';
+import AlejandroImg from '@public/alejandro.svg';
+import ShiteshImg from '@public/shitesh.svg';
 import {LinkedinIcon} from '@/components/images/ImageLoader';
 import React, {type JSX} from "react";
 import type TeamMember from "@/types/TeamMemberInterface";

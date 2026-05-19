@@ -1,21 +1,15 @@
 "use client";
-import React, {type JSX, useRef} from 'react';
-import gsap from 'gsap';
-import {useGSAP} from '@gsap/react';
+
+import {type JSX} from 'react';
 import {QuoteIcon} from "@/components/images/ImageLoader";
 
-const DesignQuestion: () => React.JSX.Element = (): JSX.Element => {
-    const scope = useRef<HTMLDivElement>(null);
+import useDesignQuestionAnimation from "@/hooks/useDesignQuestionAnimation";
 
-    useGSAP((): void => {
-        gsap.from('.design-question__header', {
-            y: 30, opacity: 0, duration: 0.8, ease: "power3.out",
-            scrollTrigger: {trigger: scope.current, start: "top 85%", once: true}
-        });
-    }, {scope});
+const DesignQuestion = (): JSX.Element => {
+    const containerRef = useDesignQuestionAnimation();
 
     return (
-        <div className="design-question" ref={scope}>
+        <div className="design-question" ref={containerRef}>
             <div className="design-question__container">
 
                 <h2 className="design-question__title">Ontwerpvraag</h2>
