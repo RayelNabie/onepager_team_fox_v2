@@ -1,5 +1,5 @@
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 export default interface IconProps extends SVGProps<SVGSVGElement> {
-    className?: string;
+  className?: string;
 }
