@@ -2,7 +2,7 @@ name: 1 - Setup
 
 on:
   release:
-    types: [published]
+    types: [published, prereleased]
 
 jobs:
   setup:
