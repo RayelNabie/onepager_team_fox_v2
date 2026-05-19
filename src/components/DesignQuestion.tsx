@@ -9,7 +9,7 @@ const DesignQuestion = (): JSX.Element => {
   const containerRef = useDesignQuestionAnimation();
 
   return (
-    <div className="design-question" ref={containerRef}>
+    <div className="design-question" id="ontwerpvraag" ref={containerRef}>
       <div className="design-question__container">
         <h2 className="design-question__title">Ontwerpvraag</h2>
 
