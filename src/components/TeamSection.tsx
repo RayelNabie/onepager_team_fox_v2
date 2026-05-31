@@ -1,8 +1,8 @@
-import AlejandroImg from "@public/alejandro.svg";
-import CelineImg from "@public/celine.svg";
-import MaureenImg from "@public/maureen.svg";
-import RayelImg from "@public/rayel.svg";
-import ShiteshImg from "@public/shitesh.svg";
+import AlejandroImg from "@public/image_alejandro.svg";
+import CelineImg from "@public/image_celine.svg";
+import MaureenImg from "@public/image_maureen.svg";
+import RayelImg from "@public/image_rayel.svg";
+import ShiteshImg from "@public/image_shitesh.svg";
 import Image from "next/image";
 import type React from "react";
 import type { JSX } from "react";
@@ -49,13 +49,11 @@ const TeamSection: () => React.JSX.Element = (): JSX.Element => {
           {teamMembers.map(
             (member: TeamMember): JSX.Element => (
               <div className="team__member" key={member.name}>
-                <div className="team__image-wrapper">
                   <Image
                     src={member.image}
                     alt={`Foto van ${member.name}`}
                     className="team__image"
                   />
-                </div>
                 <div className="team__info">
                   <h3 className="team__name">{member.name}</h3>
                   <p className="team__role">{member.role}</p>
