@@ -16,8 +16,8 @@ const DesignQuestion = (): JSX.Element => {
         <p className="design-question__quote">
           Hoe kunnen we jongvolwassenen in Rotterdam tussen de 18 en 25 ondersteunen bij het
           verbreken van phubbing-gewoontes, zodat zij binnen vriendengroepen tijdens het samenzijn
-          in &#34;Third Places&#34; de waarde van mentaal aanwezig zijn opnieuw gaan ervaren en
-          kiezen voor contact boven schermafleiding?
+          in "Third Places" de waarde van mentaal aanwezig zijn opnieuw gaan ervaren en kiezen voor
+          contact boven schermafleiding?
         </p>
       </div>
 
