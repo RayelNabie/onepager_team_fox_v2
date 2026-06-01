@@ -13,30 +13,21 @@ const DesignScope = (): JSX.Element => {
         {/* Within Scope */}
         <h3 className="design-scope__card-title">Binnen de scope</h3>
         <p className="design-scope__card-text">
-          De reikwijdte van dit project richt zich specifiek op jongvolwassenen in de
-          leeftijdscategorie van 18 tot 25 jaar binnen de regio Rotterdam. Hierbij ligt de nadruk op
-          een curatieve aanpak waarbij bestaande phubbing-gewoontes op een directe manier worden
-          doorbroken binnen de sociale context van vriendengroepen. De interventie is ontworpen voor
-          gebruik in zogenaamde &#39;Third Spaces&#39;, oftewel publieke ontmoetingsplekken zoals
-          terrassen, café&#39;s en jongerenhubs. Centraal in de oplossing staat het realiseren van
-          een fysiek object dat door middel van speelse elementen de mentale aanwezigheid versterkt
-          en een actieve gezamenlijke focus afdwingt, waardoor de drempel voor spontaan sociaal
-          contact wordt verlaagd.
+          De scope richt zich op jongvolwassenen (18-25 jaar) in Rotterdam binnen de context van
+          'Third Spaces'. Het project behelst een fysieke, curatieve interventie die
+          phubbing-gewoontes in vriendengroepen doorbreekt en de gezamenlijke mentale aanwezigheid
+          versterkt via speelse elementen.
         </p>
       </div>
       <div className="design-scope__card">
         {/* Outside Scope */}
         <h3 className="design-scope__card-title">Buiten de scope</h3>
         <p className="design-scope__card-text">
-          Buiten de kaders van dit onderzoek vallen doelgroepen jonger dan 18 jaar en volwassenen
-          ouder dan 25 jaar, waarbij ook de specifieke thuissituatie of de interactie tussen ouders
-          en kinderen niet langer tot het onderzoeksveld behoort. Er wordt geen medische of
-          klinische hulp geboden voor zware smartphoneverslaving en het project beperkt zich
-          geografisch strikt tot de stad Rotterdam. Tevens worden er geen digitale platforms
-          ontwikkeld die het fysieke gesprek pogen te vervangen; oplossingen die uitsluitend gericht
-          zijn op het beperken van schermtijd zonder een expliciete sociale focus worden niet in het
-          ontwerp meegenomen. De focus ligt hiermee puur op de directe sociale interactie en niet op
-          individueel smartphonegebruik buiten een groepscontext..
+          Buiten de scope vallen personen buiten de leeftijdscategorie 18-25 jaar, de thuissituatie
+          en medische zorg voor smartphoneverslaving. Puur digitale oplossingen en interventies
+          zonder sociale focus vallen er ook buiten. Ons prototype is alleen bedoeld voor informele
+          third spaces, niet voor klaslokalen of werkomgevingen, en is geen tool voor diepgaande
+          gesprekken.
         </p>
       </div>
     </div>

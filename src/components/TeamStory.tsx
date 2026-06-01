@@ -24,10 +24,10 @@ const TeamStory = (): JSX.Element => {
             </p>
             <p className="team-story__text">
               Onze kracht zit in het combineren van inzichten vanuit vijf verschillende
-              perspectieven, waarbij we expertise uit design, IT, informatica, business & IT en
-              applied data science naadloos samenbrengen. Door deze verschillende achtergronden aan
+              perspectieven, waarbij we expertise uit CMD, CMGT, Informatica, Business & IT en
+              Applied Data Science & AI samenbrengen. Door deze verschillende achtergronden aan
               elkaar te knopen, kijken we verder dan een standaard aanpak en werken we aan een
-              totaaloplossing die zowel technisch robuust als sociaal relevant is. Het als een vos
+              totaaloplossing die zowel technisch robuust als sociaal relevant is. Net als een vos
               treden we hierbij op als slimme verkenners die scherp blijven op wat er echt speelt in
               de wijk én wat jongeren nodig hebben voor daadwerkelijke verbinding.
             </p>

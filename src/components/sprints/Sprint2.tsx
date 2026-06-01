@@ -17,14 +17,13 @@ const Sprint2 = () => {
       <div className="sprint2__col">
         <h4> De koerswijziging</h4>
         <p>
-          Om het probleem echt goed te begrijpen, hebben we het opgedeeld in vier belangrijke
-          onderzoeksthema&#39;s: Negatieve Gevolgen en Sociale Impact: Hoe phubbing zorgt voor
-          sociale uitsluiting en de kwaliteit van gesprekken omlaag haalt. Sociale Angst en de
-          Drang: Waarom grijpen we reflexmatig naar die telefoon? We keken hierbij naar de rol van
-          dopamine-prikkels en sociale angst. De Impact van de Thuissituatie: Hoe ouders als
-          rolmodel fungeren en hoe een mogelijke cultuurkloof jongeren soms juist richting online
-          verbinding drijft. Oplossingsrichting: Het identificeren van effectieve interventies die
-          de reflexmatige drang doorbreken en de actieve betrokkenheid stimuleren.
+          Na de waardevolle feedback uit Sprint 1 hebben we een belangrijke knoop doorgehakt. In
+          plaats van phubbing alleen te voorkomen, richten we ons nu op het verbreken van bestaande
+          gewoontes. Deze verschuiving naar een curatieve aanpak vroeg om een nieuwe doelgroep:
+          jongvolwassenen in Rotterdam tussen de 18 en 25. Zij ervaren dagelijks de frictie tussen
+          hun digitale en fysieke leefwereld. Onze nieuwe ontwerpvraag richt zich op het
+          herontdekken van de waarde van mentaal aanwezig zijn binnen vriendengroepen, waarbij we
+          zoeken naar een oplossing die aansluit bij hun leefwereld.
         </p>
       </div>
 
@@ -58,7 +57,7 @@ const Sprint2 = () => {
           Om onze aannames over onbewust gedrag te toetsen, hebben we een uitgebreid experiment
           uitgevoerd in twee verschillende liftomgevingen binnen de Hogeschool Rotterdam. Het doel
           was om te onderzoeken hoe de fysieke aanwezigheid van een smartphone de sociale dynamiek
-          beïnvloedt. We hebben hierbij twee verschillende scenario&apos;s getest:
+          beïnvloedt. We hebben hierbij twee verschillende scenario's getest:
         </p>
         <h4>Test 1</h4>
         <p>
@@ -80,14 +79,13 @@ const Sprint2 = () => {
       <div className="sprint2__col">
         <h4>Prototype: &#39;Tussenonsje&#39;</h4>
         <p>
-          Deze inzichten leidden tot ons eerste low-fidelity prototype: &#39;Tussenonsje&#39;. Dit
-          is een fysiek interactiebord dat momenteel op de derde verdieping van locatie Wijnhaven
-          staat. Met vragen die je aan het denken zetten en herkenbare situaties nudgen we studenten
-          om hun gedachten te delen op post-its in plaats van te vluchten in hun scherm. Via een
-          QR-code koppelen willen we dit koppelen aan een app-concept waar studenten zelf input
-          kunnen geven voor nieuwe vragen. We testen momenteel of er meer behoefte is aan diepgaande
-          persoonlijke vragen of aan laagdrempelige situaties waarin men elkaar om advies kan
-          vragen.
+          Deze inzichten leidden tot ons eerste low-fidelity prototype: 'Tussenonsje'. Dit is een
+          fysiek interactiebord dat momenteel op de derde verdieping van locatie Wijnhaven staat.
+          Met vragen die je aan het denken zetten en herkenbare situaties nudgen we studenten om hun
+          gedachten te delen op post-its in plaats van te vluchten in hun scherm. Via een QR-code
+          koppelen willen we dit koppelen aan een app-concept waar studenten zelf input kunnen geven
+          voor nieuwe vragen. We testen momenteel of er meer behoefte is aan diepgaande persoonlijke
+          vragen of aan laagdrempelige situaties waarin men elkaar om advies kan vragen.
         </p>
       </div>
 

@@ -24,16 +24,16 @@ const Situations = (): JSX.Element => {
           <div className="situations__card situations__card--current">
             <h2 className="situations__title">Huidige situatie</h2>
             <p className="situations__text">
-              In Rotterdamse &#39;Third Spaces&#39;, zoals terrassen, café&#39;s en jongerenhubs, is
-              phubbing de nieuwe sociale standaard geworden. Smartphones fungeren als een
-              reflexmatige buffer om elk moment van stilte of sociale ongemakkelijkheid te
-              vermijden. Wetenschappelijk onderzoek toont aan dat dit gedrag dezelfde hersengebieden
-              activeert als fysieke pijn, wat de negatieve impact op de sociale sfeer verklaart. Het
-              brein is door platforms zoals TikTok en Instagram getraind op snelle
-              dopamine-prikkels, waardoor de drempel voor diepgaande, fysieke connectie steeds hoger
-              wordt. In plaats van echte verbinding tijdens het samenzijn, ontstaat er digitale
-              isolatie binnen de vriendengroep, waarbij de kwaliteit van het gesprek ondergeschikt
-              raakt aan de constante stroom van notificaties en schermafleiding.
+              In Rotterdamse 'Third Spaces', zoals terrassen, café’s en jongerenhubs, is phubbing de
+              nieuwe sociale standaard geworden. Smartphones fungeren als een reflexmatige buffer om
+              elk moment van stilte of sociale ongemakkelijkheid te vermijden. Wetenschappelijk
+              onderzoek toont aan dat dit gedrag dezelfde hersengebieden activeert als fysieke pijn,
+              wat de negatieve impact op de sociale sfeer verklaart. Het brein is door platforms
+              zoals TikTok en Instagram getraind op snelle dopamine-prikkels, waardoor de drempel
+              voor diepgaande, fysieke connectie steeds hoger wordt. In plaats van echte verbinding
+              tijdens het samenzijn, ontstaat er digitale isolatie binnen de vriendengroep, waarbij
+              de kwaliteit van het gesprek ondergeschikt raakt aan de constante stroom van
+              notificaties en schermafleiding.
             </p>
           </div>
           <ArrowdownIcon className="situations__arrow" />
@@ -54,8 +54,8 @@ const Situations = (): JSX.Element => {
               bij hun vrienden. De drempel voor spontaan en betekenisvol fysiek contact is verlaagd,
               doordat jongeren zich weer sociaal weerbaar voelen zonder digitale buffer. Door de
               inzet van speelse, fysieke interventies wordt de kwaliteit van de interactie hersteld
-              en ervaren vriendengroepen weer de authentieke waarde van het &#39;hier en nu&#39;.
-              Het resultaat is een omgeving waarin elke jongere met zelfvertrouwen en onverdeelde
+              en ervaren vriendengroepen weer de authentieke waarde van het 'hier en nu'. Het
+              resultaat is een omgeving waarin elke jongere met zelfvertrouwen en onverdeelde
               aandacht kan deelnemen aan de fysieke samenleving in de stad.
             </p>
           </div>

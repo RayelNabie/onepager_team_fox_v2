@@ -8,28 +8,28 @@ import type DesignConditionsInterface from "@/types/DesignConditionsInterface";
 
 const conditions: DesignConditionsInterface[] = [
   {
-    title: "Fysiek karakter",
-    text: "Het ontwerp moet een tastbaar object bevatten dat de visuele en fysieke aandacht opeist om digitale notificaties te overstemmen.",
+    title: "Hybride karakter",
+    text: "De oplossing mag niet uitsluitend uit een digitaal platform of een app bestaan.",
   },
   {
-    title: "groepsdeelname",
-    text: "De werking van de oplossing moet afhankelijk zijn van de inzet van de gehele vriendengroep.",
+    title: "Toepasbaarheid in openbare ruimtes",
+    text: "Het product moet bruikbaar zijn in een drukke omgeving, maar mag niet voor geluids- of lichtoverlast zorgen voor andere gasten.",
   },
   {
     title: "Toegankelijkheid",
-    text: "De interventie moet laagdrempelig, begrijpelijk en bruikbaar zijn voor jongeren met uiteenlopende achtergronden en taalniveaus.",
+    text: "De opdrachten moeten bruikbaar zijn voor jongeren van elk taalniveau. ",
   },
   {
-    title: "Geen kosten",
-    text: "Er mag geen financiële drempel zijn voor de doelgroep om deel te nemen aan de interventie.",
+    title: "Veiligheid",
+    text: "De interventie moet een sociaal veilige omgeving bieden voor de gebruikers en mag geen persoonlijke gegevens opslaan of interacties veroorzaken die deelnemers kunnen kwetsen of uitsluiten.",
   },
   {
-    title: "Speelsheid",
-    text: "Het ontwerp moet gebruikmaken van uitdagende of competitieve elementen die aansluiten bij de belevingswereld van de doelgroep.",
+    title: "Duurzaamheid",
+    text: "Het product moet geschikt zijn voor langdurig en herhaaldelijk gebruik door verschillende groepen en mag geen materialen bevatten die na één keer spelen opraken.",
   },
   {
-    title: "Haalbaarheid",
-    text: "Het prototype moet binnen de resterende weken van het semester technisch en organisatorisch gerealiseerd en getest kunnen worden.",
+    title: "Technische & Organisatorische Realisatie",
+    text: "Het product moet uiterlijk op 4 juni op de eindexpositie staan met een werkende demonstratie.",
   },
 ];
 
