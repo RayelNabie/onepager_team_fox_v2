@@ -24,98 +24,28 @@
     color: $primary;
     font-size: $font-size-h1;
     font-weight: $weight-bold;
+  }
 
-    @include respond-min($tablet) {
+  .swiper {
+    width: 100%;
+  }
 
+  .swiper-slide {
+    width: auto;
+
+    img {
+      display: block;
+      height: 160px;
+      width: auto;
+
+      @include respond-min($tablet) {
+        height: 220px;
+      }
+
+      @include respond-min($desktop) {
+        height: 271px;
+      }
     }
-  }
-
-  &__grid {
-    display: flex;
-    flex-direction: column;
-    overflow-x: auto;
-    gap: 10px;
-
-    // IOS scrolling behaviour
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    // Create extra item to ignore clipping
-    &::after {
-      content: '';
-      flex: 0 0 max(20px, calc((100vw - $content-width-small) / 2));
-      scroll-snap-align: none;
-    }
-
-    @include respond-min($tablet) {
-      gap: 20px;
-      flex-direction: row;
-    }
-  }
-
-  &__card {
-    display: flex;
-    flex-direction: column;
-    scroll-snap-align: center;
-    gap: 16px;
-    padding: 40px;
-    justify-content: flex-start;
-
-    background-color: $primary;
-    border-radius: 20px;
-    color: $white;
-
-    @include respond-min($tablet) {
-      flex: 0 0 400px;
-      scroll-snap-align: start;
-
-      height: 191px;
-    }
-  }
-
-  &__card-title {
-    text-align: center;
-    margin: 0;
-
-    font-family: $heading-font;
-    color: $white;
-    font-size: $font-size-quote;
-    font-weight: $weight-bold;
-  }
-
-  &__card-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    flex: 1;
-  }
-
-  &__icon {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-
-    width: 100px;
-    height: 100px;
-    fill: $background;
-  }
-
-  &__text {
-    margin: 0;
-
-    font-family: $base-font;
-    font-size: $font-size-body;
-    font-weight: $weight-light;
-    color: $background;
-    line-height: 25px;
   }
 
   &__scroll {
@@ -128,20 +58,8 @@
     font-family: $base-font;
     font-size: 14px;
 
-    @include respond-min($tablet) {
-    }
-
     &-arrow {
       animation: bounceHorizontal 2s infinite;
     }
-  }
-}
-
-@keyframes bounceHorizontal {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(6px);
   }
 }

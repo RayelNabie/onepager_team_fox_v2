@@ -1,75 +1,34 @@
 "use client";
 
-import type React from "react";
 import type { JSX } from "react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import TeamvalueJustice from "@public/teamvalue_justice.svg";
+import TeamvalueFun from "@public/teamvalue_fun.svg";
+import TeamvalueHonesty from "@public/teamvalue_honesty.svg";
+import TeamvalueHelpfulness from "@public/teamvalue_helpfulness.svg";
+import TeamvalueCreativity from "@public/teamvalue_creativity.svg";
 
-import {
-  HandheartIcon,
-  LightbulbIcon,
-  PrayinIcon,
-  ScaleIcon,
-  SmileyIcon,
-} from "@/components/images/ImageLoader";
-import useTeamValuesAnimation from "@/hooks/useTeamValuesAnimation";
-
-interface ValueData {
-  title: string;
-  icon: React.ElementType;
-  text: string;
-}
-
-const valuesData: ValueData[] = [
-  {
-    title: "Rechtvaardigheid",
-    icon: ScaleIcon,
-    text: "Wij behandelen iedereen op dezelfde manier en maken eerlijke keuzes. We luisteren naar iedereen en zorgen dat niemand wordt buitengesloten.",
-  },
-  {
-    title: "Plezier",
-    icon: SmileyIcon,
-    text: "Wij vinden het belangrijk dat werken leuk is en dat we samen kunnen lachen. Als we plezier hebben in ons werk, gaat alles makkelijker en worden de resultaten beter.",
-  },
-  {
-    title: "Eerlijkheid",
-    icon: HandheartIcon,
-    text: "Wij zijn glashelder over elke stap die we zetten. Door transparant te zijn over ons proces en de keuzes die we maken, bouwen we aan een fundament van vertrouwen met de gemeenschap in Rotterdam-Zuid.",
-  },
-  {
-    title: "Behulpzaam",
-    icon: PrayinIcon,
-    text: "Wij vertellen elkaar altijd de waarheid, ook als dat soms lastig is. We zijn open over wat we doen, zodat we elkaar écht kunnen vertrouwen.",
-  },
-  {
-    title: "Creativiteit",
-    icon: LightbulbIcon,
-    text: "Wij durven nieuwe dingen te proberen en bedenken slimme oplossingen voor problemen. We staan open voor alle ideeën en kijken op een andere manier naar ons werk.",
-  },
+const values = [
+  { name: "Rechtvaardigheid", image: TeamvalueJustice },
+  { name: "Plezier", image: TeamvalueFun },
+  { name: "Eerlijkheid", image: TeamvalueHonesty },
+  { name: "Behulpzaam", image: TeamvalueHelpfulness },
+  { name: "Creativiteit", image: TeamvalueCreativity },
 ];
 
 const TeamValues = (): JSX.Element => {
-  const containerRef = useTeamValuesAnimation();
-
   return (
-    <section className="team-values" id="teamwaarden" ref={containerRef}>
-      {/* Title */}
+    <section className="team-values" id="teamwaarden">
       <h2 className="team-values__title">Teamwaarden</h2>
-
-      {/* Scrolling box */}
-      <div className="team-values__grid">
-        {valuesData.map((item: ValueData, _index: number): JSX.Element => {
-          const IconContent: React.ElementType = item.icon;
-
-          return (
-            <div className="team-values__card" key={item.title}>
-              <h3 className="team-values__card-title">{item.title}</h3>
-              <div className="team-values__card-content">
-                <IconContent className="team-values__icon" />
-                <p className="team-values__text">{item.text}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <Swiper spaceBetween={24} slidesPerView="auto">
+        {values.map(({ name, image }) => (
+          <SwiperSlide key={name}>
+            <Image src={image} alt={name} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       {/* Scroll voor meer element */}
       <div className="team-values__scroll">

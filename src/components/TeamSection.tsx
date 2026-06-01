@@ -5,8 +5,8 @@ import RayelImg from "@public/image_rayel.svg";
 import ShiteshImg from "@public/image_shitesh.svg";
 import Image from "next/image";
 import type React from "react";
-import type {JSX} from "react";
-import {LinkedinIcon} from "@/components/images/ImageLoader";
+import type { JSX } from "react";
+import { LinkedinIcon } from "@/components/images/ImageLoader";
 import type TeamMember from "@/types/TeamMemberInterface";
 
 const teamMembers: TeamMember[] = [
@@ -64,11 +64,7 @@ const TeamSection: () => React.JSX.Element = (): JSX.Element => {
           {teamMembers.map(
             (member: TeamMember): JSX.Element => (
               <div className="team__member" key={member.name}>
-                <Image
-                  src={member.image}
-                  alt={`Foto van ${member.name}`}
-                  className="team__image"
-                />
+                <Image src={member.image} alt={`Foto van ${member.name}`} className="team__image" />
                 <div className="team__info">
                   <h3 className="team__name">{member.name}</h3>
                   <p className="team__role">{member.role}</p>
@@ -80,7 +76,7 @@ const TeamSection: () => React.JSX.Element = (): JSX.Element => {
                     rel="noopener noreferrer"
                     className="team__linkedin"
                   >
-                    <LinkedinIcon className="team__linkedin-icon"/>
+                    <LinkedinIcon className="team__linkedin-icon" />
                     <span>{member.linkedinName}</span>
                   </a>
                 </div>
