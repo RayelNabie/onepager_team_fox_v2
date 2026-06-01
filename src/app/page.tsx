@@ -9,6 +9,7 @@ import TeamSection from "@/components/TeamSection";
 import TeamStory from "@/components/TeamStory";
 import TeamValues from "@/components/TeamValues";
 import Phubbing from "@/components/Phubbing";
+import Phubbom from "@/components/Phubbom";
 
 export default function Home() {
   return (
@@ -18,7 +19,8 @@ export default function Home() {
       <TeamSection />
       <TeamStory />
       <TeamValues />
-      <Phubbing/>
+      <Phubbing />
+      <Phubbom />
       <Situations />
       <DesignQuestion />
       <DesignScope />
