@@ -10,6 +10,7 @@ import TeamStory from "@/components/TeamStory";
 import TeamValues from "@/components/TeamValues";
 import Phubbing from "@/components/Phubbing";
 import Phubbom from "@/components/Phubbom";
+import InsightCards from "@/components/InsightCards";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <TeamValues />
       <Phubbing />
       <Phubbom />
+      <InsightCards />
       <Situations />
       <DesignQuestion />
       <DesignScope />
