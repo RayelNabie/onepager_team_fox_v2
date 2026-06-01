@@ -160,9 +160,7 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    overflow: visible;
-
-    height: 100%;
+    overflow: hidden;
   }
 
   &__wiggle {
@@ -171,21 +169,22 @@
     @include respond-min($tablet) {
       position: absolute;
       display: block;
-
-      width: 180vw;
       height: auto;
     }
 
     &--orange {
-      top: 100%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-34deg);
-
       @include respond-min($tablet) {
-        left: 40%;
-        transform: translate(-50%, -60%) rotate(-15deg);
+        top: -20%;
+        right: -40%;
+        left: auto;
+        transform: rotate(-5.221deg);
+        width: 120vw;
+      }
 
-        width: 150vw;
+      @include respond-min($desktop) {
+        top: -25%;
+        right: -45%;
+        width: 100vw;
       }
     }
   }
