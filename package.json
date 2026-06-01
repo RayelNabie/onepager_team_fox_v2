@@ -12,25 +12,29 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "gsap": "^3.14.2",
-    "next": "16.1.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "gsap": "^3.15.0",
+    "next": "16.2.7",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
     "swiper": "^12.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "sass": "^1.98.0",
-    "typescript": "^5"
+    "@types/node": "^20.19.41",
+    "@types/react": "19.2.16",
+    "@types/react-dom": "19.2.3",
+    "sass": "^1.100.0",
+    "typescript": "^5.9.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "sharp",
       "unrs-resolver"
-    ]
+    ],
+    "overrides": {
+      "@types/react": "19.2.16",
+      "@types/react-dom": "19.2.3"
+    }
   }
 }
