@@ -9,8 +9,9 @@ import TeamvalueFun from "@public/teamvalue_fun.svg";
 import TeamvalueHonesty from "@public/teamvalue_honesty.svg";
 import TeamvalueHelpfulness from "@public/teamvalue_helpfulness.svg";
 import TeamvalueCreativity from "@public/teamvalue_creativity.svg";
+import type TeamValue from "@/types/TeamValuesInterface";
 
-const values = [
+const values : TeamValue[] = [
   { name: "Rechtvaardigheid", image: TeamvalueJustice },
   { name: "Plezier", image: TeamvalueFun },
   { name: "Eerlijkheid", image: TeamvalueHonesty },
@@ -23,7 +24,7 @@ const TeamValues = (): JSX.Element => {
     <section className="team-values" id="teamwaarden">
       <h2 className="team-values__title">Teamwaarden</h2>
       <Swiper spaceBetween={24} slidesPerView="auto">
-        {values.map(({ name, image }) => (
+        {values.map(({ name, image }: TeamValue): JSX.Element => (
           <SwiperSlide key={name}>
             <Image src={image} alt={name} />
           </SwiperSlide>

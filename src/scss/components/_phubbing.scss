@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+.phubbing {
+  background-color: $background;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: $content-width-small;
+    margin: 0 auto;
+    gap: 40px;
+
+    padding-block: 40px;
+    padding-inline: 20px;
+
+
+    @include respond-min($tablet) {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 40px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include respond-min($tablet) {
+      flex: 1;
+      gap: 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: $heading-font;
+    color: $primary-dark;
+    font-size: $font-size-h2;
+    letter-spacing: 1.2px;
+    font-weight: $weight-bold;
+
+    @include respond-min($tablet) {
+      font-size: $font-size-h1;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__subtitle,
+  &__text {
+    margin: 0;
+
+    font-family: $base-font;
+    color: $text-color;
+    font-size: $font-size-body;
+    line-height: 1.6;
+  }
+}
