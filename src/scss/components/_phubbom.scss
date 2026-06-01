@@ -1,13 +1,13 @@
 @use '../abstracts' as *;
 
-.phubbing {
+.phubbom {
   background-color: $background;
   width: 100%;
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     max-width: $content-width-small;
     margin: 0 auto;
 
@@ -15,7 +15,7 @@
     padding-inline: 20px;
 
     @include respond-min($tablet) {
-      gap: 24px;
+      gap: 40px;
       padding-block: 60px;
       padding-inline: 40px;
     }
@@ -49,5 +49,10 @@
     color: $text-color;
     font-size: $font-size-body;
     line-height: 1.6;
+  }
+
+  &__animation-image {
+    width: 100%;
+    height: auto;
   }
 }
