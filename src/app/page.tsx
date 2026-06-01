@@ -1,6 +1,8 @@
 import DesignConditions from "@/components/DesignConditions";
 import DesignQuestion from "@/components/DesignQuestion";
 import DesignScope from "@/components/DesignScope";
+import Image from "next/image";
+import PinkLine from "@public/pink_line.svg";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Process from "@/components/Process";
@@ -24,8 +26,11 @@ export default function Home() {
       <Phubbom />
       <InsightCards />
       <Situations />
-      <DesignQuestion />
-      <DesignScope />
+      <div className="design-wrapper">
+        <Image src={PinkLine} alt="" className="design-wrapper__wiggle" aria-hidden={true} />
+        <DesignQuestion />
+        <DesignScope />
+      </div>
       <DesignConditions />
       <Process />
     </main>

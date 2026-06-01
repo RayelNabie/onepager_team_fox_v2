@@ -1,7 +1,5 @@
 "use client";
 
-import PinkLine from "@public/pink_line.svg";
-import Image from "next/image";
 import type { JSX } from "react";
 import useDesignConditionsAnimation from "@/hooks/useDesignConditionsAnimation";
 import type DesignConditionsInterface from "@/types/DesignConditionsInterface";
@@ -38,16 +36,6 @@ const DesignConditions = (): JSX.Element => {
 
   return (
     <section className="design-conditions">
-      {/* Pink Wiggle */}
-      <div className="situations__wiggles" aria-hidden="true">
-        <Image
-          src={PinkLine}
-          alt=""
-          className="design-conditions__wiggle design-conditions__wiggle--pink"
-        />
-      </div>
-
-      {/* Design conditions */}
       <div className="design-conditions__container" ref={containerRef}>
         <h2 className="design-conditions__title">Randvoorwaarden</h2>
         <div className="design-conditions__list">
