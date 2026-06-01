@@ -28,6 +28,7 @@
     color: $primary;
     font-size: $font-size-h2;
     font-weight: $weight-bold;
+    margin: 0;
 
     @include respond-min($tablet) {
       font-size: $font-size-h1;
