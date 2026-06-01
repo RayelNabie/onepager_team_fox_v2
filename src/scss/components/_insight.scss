@@ -1,0 +1,84 @@
+@use '../abstracts' as *;
+
+.insight-cards {
+  background-color: $primary-dark;
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: $content-width-small;
+    margin: 0 auto;
+
+    padding-block: 40px;
+    padding-inline: 20px;
+
+    @include respond-min($tablet) {
+      padding-inline: 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: $heading-font;
+    color: $white;
+    font-size: $font-size-h2;
+    font-weight: $weight-bold;
+
+    @include respond-min($tablet) {
+      font-size: $font-size-h1;
+    }
+  }
+
+  .swiper {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    width: auto;
+
+    img {
+      display: block;
+      height: 220px;
+      width: auto;
+
+      @include respond-min($tablet) {
+        height: 340px;
+      }
+
+      @include respond-min($desktop) {
+        height: 472px;
+      }
+    }
+  }
+
+  &__scroll {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    color: $white;
+    font-family: $base-font;
+    font-size: 14px;
+
+    p {
+      margin: 0;
+    }
+
+    &-arrow {
+      animation: bounceHorizontal 2s infinite;
+    }
+  }
+}
+
+@keyframes bounceHorizontal {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
