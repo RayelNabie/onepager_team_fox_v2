@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.design-wrapper {
+  position: relative;
+  overflow-x: clip;
+  background-color: $background;
+
+  &__wiggle {
+    display: none;
+
+    @include respond-min($tablet) {
+      position: absolute;
+      display: block;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: auto;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @include respond-min($desktop) {
+      width: 100vw;
+    }
+  }
+}
