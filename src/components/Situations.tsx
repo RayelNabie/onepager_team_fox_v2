@@ -41,9 +41,7 @@ const Situations = (): JSX.Element => {
 
         {/* Desired Situation */}
         <div className="situations__row situations__row--bottom">
-          <div className="situations__fox">
-            <Image src={FoxVisual} alt="Zittend vosje" className="situations__fox" />
-          </div>
+          <Image src={FoxVisual} alt="Zittend vosje" className="situations__fox" />
 
           <div className="situations__card situations__card--desired">
             <h2 className="situations__title situations__title--light">Gewenste situatie</h2>
