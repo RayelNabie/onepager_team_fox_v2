@@ -220,3 +220,33 @@
     }
   }
 }
+
+.doorontwikkeling {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h3 {
+    font-family: $heading-font;
+    font-size: $font-size-h1;
+    font-weight: $weight-bold;
+    color: $primary-dark;
+    margin: 0 0 1rem;
+  }
+
+  h4 {
+    font-family: $heading-font;
+    font-size: $font-size-quote;
+    font-weight: $weight-bold;
+    color: $primary;
+    margin: 1rem 0 0;
+  }
+
+  p {
+    font-family: $base-font;
+    font-size: $font-size-body;
+    color: $text-color;
+    line-height: 1.6;
+    margin: 0;
+  }
+}

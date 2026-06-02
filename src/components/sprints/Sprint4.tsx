@@ -13,7 +13,7 @@ const Sprint4: () => React.JSX.Element = (): JSX.Element => {
     <SprintLayout
       sprintNumber={4}
       timelineLabel="Ideation, Create & Testing fase"
-      visual={<Image src={Sprint4Visual} alt="Sprint 3 Visual" className="sprint-layout__visual" />}
+      visual={<Image src={Sprint4Visual} alt="Sprint 4 Visual" className="sprint-layout__visual" />}
       footerTitle="Klaar voor de volgende stap"
       footerContent={
         <>
@@ -31,7 +31,7 @@ const Sprint4: () => React.JSX.Element = (): JSX.Element => {
         </>
       }
     >
-      <div className="sprint3__col">
+      <div className="sprint4__col">
         <h4>Van gespreksstarter naar gedragsbreker</h4>
         <p>
           Na de feedback uit de eerste testfase van Sprint 3 hebben wij ons gericht op het verder
@@ -45,6 +45,7 @@ const Sprint4: () => React.JSX.Element = (): JSX.Element => {
           gehouden met geluid, licht en de draagbaarheid van het object. Vanuit de schetsen is een
           definitief ontwerp ontstaan, dat vervolgens is uitgewerkt tot een 3D-model.
         </p>
+
         <h4>Technisch:</h4>
         <p>
           Op technisch vlak is er gekozen voor een AI-koppeling, waarmee er op basis van interesses
@@ -53,7 +54,6 @@ const Sprint4: () => React.JSX.Element = (): JSX.Element => {
           heeft om de groepsinteresses in te voeren, waarna er automatisch een vraag verschijnt met
           een tikkende timer op de achtergrond. Om het systeem betrouwbaar te houden, is er een
           back-updatabase toegevoegd met vooraf ingestelde interesses en vragen.
-          <br />
         </p>
         <p>
           De Phubbom bestaat uiteindelijk uit een 3D-geprint omhulsel met een speaker die de vragen
@@ -61,27 +61,27 @@ const Sprint4: () => React.JSX.Element = (): JSX.Element => {
         </p>
       </div>
 
-      <SprintDivider direction="left" sprintNumber={3} />
+      <SprintDivider direction="left" sprintNumber={4} />
 
-      <div className="sprint3__col sprint3__col--image-container">
-        <Image src={Phubbom} alt="Phubbom" width={429} height={337} className="sprint3__image" />
-        <Image src={DSIapp} alt="DSIapp" width={429} height={337} className="sprint3__image" />
+      <div className="sprint4__col sprint4__col--image-container">
+        <Image src={Phubbom} alt="Phubbom" width={429} height={337} className="sprint4__image" />
+        <Image src={DSIapp} alt="DSI app" width={429} height={337} className="sprint4__image" />
       </div>
 
-      <div className="sprint3__col sprint3__col--image-container">
+      <div className="sprint4__col sprint4__col--image-container">
         <Image
           src={SmartAndSocialFest}
           alt="Smart and social fest"
           width={429}
           height={337}
-          className="sprint3__image"
+          className="sprint4__image"
         />
       </div>
 
       <SprintDivider direction="right" sprintNumber={4} />
 
-      <div className="sprint3__col">
-        <h4>Tussenpresentaties @ Smart &Social Fest</h4>
+      <div className="sprint4__col">
+        <h4>Tussenpresentaties @ Smart & Social Fest</h4>
         <p>
           Tijdens de tussenpresentatie op het Smart & Social Fest hebben wij ons concept aan
           medestudenten, docenten en bezoekers gepresenteerd door middel van posters, een videoclip
@@ -92,7 +92,7 @@ const Sprint4: () => React.JSX.Element = (): JSX.Element => {
         </p>
       </div>
 
-      <div className="sprint3__col">
+      <div className="sprint4__col">
         <h4>Feedback verwerken</h4>
         <p>
           Na de tussenpresentatie is er tijd genomen om de feedback te analyseren en te verwerken in
@@ -101,19 +101,19 @@ const Sprint4: () => React.JSX.Element = (): JSX.Element => {
           fysiek werkt nadat de interesses digitaal zijn ingevoerd. Ons doel is om jongeren minder
           naar hun telefoon te laten grijpen en de ervaring juist zo fysiek mogelijk te maken. Op
           basis van deze inzichten zijn nieuwe schetsen ontwikkeld waarin verschillende aanpassingen
-          zijn gemaakt aan de vorm en interactie van de pubbom.
+          zijn gemaakt aan de vorm en interactie van de Phubbom.
         </p>
       </div>
 
       <SprintDivider direction="left" sprintNumber={4} />
 
-      <div className="sprint3__col sprint3__col--image-container">
+      <div className="sprint4__col sprint4__col--image-container">
         <Image
           src={TestingPhubbom2}
-          alt="Testen van de phubbom"
+          alt="Testen van de Phubbom"
           width={429}
           height={337}
-          className="sprint3__image"
+          className="sprint4__image"
         />
         <h4>Testen</h4>
         <p>
@@ -122,7 +122,7 @@ const Sprint4: () => React.JSX.Element = (): JSX.Element => {
           in te grijpen, om te observeren hoe zij omgaan met zowel de digitale als de fysieke
           onderdelen van de bom. De ontvangen feedback gaf ons nieuwe inzichten in de interactie en
           bracht onduidelijkheden in het concept naar boven. Deze feedback wordt meegenomen in de
-          verdere ontwikkeling van het prototype
+          verdere ontwikkeling van het prototype.
         </p>
       </div>
     </SprintLayout>
