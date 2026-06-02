@@ -40,13 +40,14 @@ const Process = (): JSX.Element => {
               <select
                 className="process__dropdown"
                 value={activeTab}
-                onChange={(e) => setActiveTab(e.target.value as Sprint)}
+                onChange={(e) => setActiveTab(e.target.value as ActiveTab)}
               >
                 {Object.values(Sprint).map((sprint) => (
                   <option key={sprint} value={sprint}>
                     {sprint}
                   </option>
                 ))}
+                <option value={DOORONTWIKKELING}>Doorontwikkeling</option>
               </select>
             </div>
             {/* Desktop Tabs */}
