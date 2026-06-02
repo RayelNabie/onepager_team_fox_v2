@@ -7,6 +7,11 @@ body {
   color: $text-color;
 }
 
+::selection {
+  background-color: $primary;
+  color: $secondary;
+}
+
 h1,
 h2,
 h3,
