@@ -64,17 +64,17 @@ const Navbar: () => React.JSX.Element = (): JSX.Element => {
 
         {/* Desktop links */}
         <div className={menuClasses}>
-          <Link href="/#team" className="navbar__link" onClick={closeMenu}>
+          <Link href="#team" className="navbar__link" onClick={closeMenu}>
             Het Team
           </Link>
-          <Link href="/#situaties" className="navbar__link" onClick={closeMenu}>
+          <Link href="#situaties" className="navbar__link" onClick={closeMenu}>
             Huidige & Gewenste situatie
           </Link>
-          <Link href="/#ontwerpvraag" className="navbar__link" onClick={closeMenu}>
+          <Link href="#ontwerpvraag" className="navbar__link" onClick={closeMenu}>
             Ontwerpvraag
           </Link>
-          <Link href="/#proces" className="navbar__link" onClick={closeMenu}>
-            Sprintplanning
+          <Link href="#proces" className="navbar__link" onClick={closeMenu}>
+            Proces
           </Link>
         </div>
       </div>
