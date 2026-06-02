@@ -1,4 +1,5 @@
 import DesignConditions from "@/components/DesignConditions";
+import Footer from "@/components/Footer";
 import DesignQuestion from "@/components/DesignQuestion";
 import DesignScope from "@/components/DesignScope";
 import Image from "next/image";
@@ -33,6 +34,7 @@ export default function Home() {
       </div>
       <DesignConditions />
       <Process />
+      <Footer />
     </main>
   );
 }

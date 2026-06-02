@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+
+.footer {
+  background-color: $primary-dark;
+  padding: 32px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond-min($tablet) {
+    padding: 40px 60px;
+  }
+
+  @include respond-min($desktop) {
+    padding: 40px 115px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    text-align: center;
+
+    font-family: $base-font;
+    font-size: $font-size-body;
+    color: $white;
+
+    @include respond-min($tablet) {
+      flex-direction: row;
+      gap: 16px;
+      text-align: left;
+    }
+  }
+
+  &__label {
+    font-weight: $weight-bold;
+  }
+
+  &__name {
+    @include respond-min($tablet) {
+      &::before {
+        content: '|';
+        margin-inline-end: 16px;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  &__email {
+    color: $white;
+    text-decoration: none;
+
+    @include respond-min($tablet) {
+      &::before {
+        content: '|';
+        margin-inline-end: 16px;
+        opacity: 0.4;
+      }
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
