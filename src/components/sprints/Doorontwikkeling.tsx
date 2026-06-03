@@ -60,7 +60,7 @@ const Doorontwikkeling: () => React.JSX.Element = (): JSX.Element => {
       </p>
 
       <h4>Schaalbaarheid en verspreiding</h4>
-      <p>
+      <p className="sprint5__doorontwikkeling">
         SOL heeft al een netwerk in meerdere steden en directe toegang tot de third spaces waar de
         Phubbom het meest relevant is. Als zij de Phubbom inzetten als onderdeel van hun bestaande
         aanbod, hoef je het wiel niet opnieuw uit te vinden qua distributie. Verken die mogelijkheid
