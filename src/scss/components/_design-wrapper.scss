@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .design-wrapper {
   position: relative;
@@ -11,6 +11,7 @@
     @include respond-min($tablet) {
       position: absolute;
       display: block;
+      top: 40%;
       left: 50%;
       transform: translateX(-50%);
       width: 100vw;
@@ -20,6 +21,7 @@
     }
 
     @include respond-min($desktop) {
+      top: 35%;
       width: 100vw;
     }
   }

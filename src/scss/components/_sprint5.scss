@@ -1,5 +1,5 @@
-@use 'sass:map';
-@use '../abstracts' as *;
+@use "sass:map";
+@use "../abstracts" as *;
 
 .sprint5 {
   &__image {
@@ -37,5 +37,8 @@
       line-height: 1.6;
       margin-block-end: 1rem;
     }
+  }
+  &__doorontwikkeling {
+    padding-bottom: 40px;
   }
 }
